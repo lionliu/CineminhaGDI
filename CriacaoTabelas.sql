@@ -143,21 +143,21 @@ CREATE TABLE Filme_Sala (
 
 CREATE TABLE Genero (
     ID_Filme NUMBER,
-    Nome_Genero NUMBER,
+    Nome_Genero VARCHAR2(10),
     CONSTRAINT Genero_pk PRIMARY KEY (ID_Filme)
     CONSTRAINT Genero_fk FOREIGN KEY (ID_Filme) REFERENCES Filme (ID_Filme)
 );
 
 CREATE TABLE Diretor (
     ID_Filme NUMBER,
-    Nome_Diretor NUMBER,
+    Nome_Diretor VARCHAR2(30),
     CONSTRAINT Diretor_pk PRIMARY KEY (ID_Filme)
     CONSTRAINT Diretor_fk FOREIGN KEY (ID_Filme) REFERENCES Filme (ID_Filme)
 );
 
 CREATE TABLE Ator (
     ID_Filme NUMBER,
-    Nome_Ator NUMBER,
+    Nome_Ator VARCHAR2(30),
     CONSTRAINT Ator_pk PRIMARY KEY (ID_Filme)
     CONSTRAINT Ator_fk FOREIGN KEY (ID_Filme) REFERENCES Filme (ID_Filme)
 );
