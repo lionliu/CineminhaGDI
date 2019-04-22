@@ -56,7 +56,9 @@ CREATE TABLE Funcionario (
     CONSTRAINT Funcionario_pk PRIMARY KEY (ID_Funcionario),
     CONSTRAINT Funcionario_pk2 FOREIGN KEY (ID_Supervisor) REFERENCES Funcionario (ID_Funcionario),
 );
-
+                                       
+CREATE INDEX indice_sal_func ON Funcionario (Salario);
+                                       
 CREATE TABLE Setor(
     ID_Setor NUMBER,
     Nome_Setor VARCHAR2(30),
