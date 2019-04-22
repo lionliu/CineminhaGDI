@@ -62,7 +62,7 @@ CONSTRAINT Setor_pk PRIMARY KEY (ID_Setor)
 CREATE TABLE Setor_Funcionario (
 ID_Setor NUMBER,
 ID_Funcionario NUMBER,
-CONSTRAINT Setor_pk PRIMARY KEY (ID_Funcionario, ID_Setor),
+CONSTRAINT Setor_func_pk PRIMARY KEY (ID_Funcionario, ID_Setor),
 CONSTRAINT Setor_fk FOREIGN KEY (ID_Funcionario) REFERENCES Funcionario (ID_Funcionario),
 CONSTRAINT Setor_fk2 FOREIGN KEY (ID_Setor) REFERENCES Setor (ID_Setor)
 );
