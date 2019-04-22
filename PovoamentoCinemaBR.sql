@@ -71,42 +71,30 @@ INSERT INTO Pessoa_Funcionario (CPF,ID_Funcionario) VALUES (3206,0004)
 
 --Inserindo Cinema;
 
-
-
-
-
-
-
+INSERT INTO Cinema (CNPJ,Numero_Salas,Nome_Cinema) VALUES (1001,12,'Disney')
+INSERT INTO Cinema (CNPJ,Numero_Salas,Nome_Cinema) VALUES (8971,1,'Assembleia de Deus')
 
 --Inserindo Endereco_Cinema;
 
-
-
-
-
-
+INSERT INTO Endereco_Cinema (CNPJ_Endereco, CEP, Rua,Bairro, Cidade, Numero_Endereco) VALUES (1001,4171,'Da Paz','Nuvem 2','Ceu',8969,)
+INSERT INTO Endereco_Cinema (CNPJ_Endereco, CEP, Rua,Bairro, Cidade, Numero_Endereco) VALUES (8971,9821,'Paranaue','Paranaua','Recife','697')
 
 --Inserindo Telefone_Cinema;
 
-
-
-
-
-
-
+INSERT INTO Telefone_Cinema (CNPJ_Telefone,telefone) VALUES (8971,32429666)
+INSERT INTO Telefone_Cinema (CNPJ_Telefone,telefone) VALUES (8971,32452135)
 
 --Inserindo Trabalha;
 
-
-
-
-
-
-
+INSERT INTO Trabalha (CNPJ_Trabalha,ID_Funcionario) VALUES (8971,0001)
+INSERT INTO Trabalha (CNPJ_Trabalha,ID_Funcionario) VALUES (8971,0002)
+INSERT INTO Trabalha (CNPJ_Trabalha,ID_Funcionario) VALUES (8971,0003)
+INSERT INTO Trabalha (CNPJ_Trabalha,ID_Funcionario) VALUES (8971,0004)
+INSERT INTO Trabalha (CNPJ_Trabalha,ID_Funcionario) VALUES (1001,0001)
 
 --Inserindo Snack_Bar;
 
-
+INSERT INTO Snack_Bar (ID_Snack_Bar,CNPJ,Horario_Abre,Horario_Fecha) VALUES ()
 
 
 
