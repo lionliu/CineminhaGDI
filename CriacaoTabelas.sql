@@ -30,12 +30,15 @@ Data_Nasc DATE
 ALTER TABLE Pessoa
 ADD (CONSTRAINT Pessoa_pk PRIMARY KEY (CPF));
 
-CREATE TABLE Telefone_Pessoa (
-CPF_Telefone NUMBER,
-telefone NUMBER,
-CONSTRAINT Telefone_pk PRIMARY KEY (CPF_Telefone, telefone)
-CONSTRAINT Telefone_fk FOREIGN KEY (CPF_Telefone) REFERENCES Pessoa (CPF)
+CREATE TABLE Funcionario(
+ID_Funcionario NUMBER,
+ID_Supervisor NUMBER,
+Salario DECIMAL (4,2),
+CONSTRAINT Funcionario_pk PRIMARY KEY (ID_Funcionario)
 );
+--é preciso alterar somente depois senao não roda no oracle live.
+ALTER TABLE Funcionario
+ADD(CONSTRAINT Funcionario_fk FOREIGN KEY (ID_Supervisor) REFERENCES Funcionario (ID_Funcionario));
 
 CREATE TABLE Endereco_Pessoa (
 CPF_Endereco NUMBER,
