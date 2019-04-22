@@ -24,9 +24,12 @@ DROP TABLE Exibe;
 CREATE TABLE Pessoa (
     CPF NUMBER,
     Nome_Pessoa VARCHAR2(30) NOT NULL,
-    Data_Nasc DATE,
-    CONSTRAINT Pessoa_pk PRIMARY KEY (CPF)
+    Data_Nasc DATE
+   
 );
+
+ALTER TABLE Pessoa
+ADD (CONSTRAINT Pessoa_pk PRIMARY KEY (CPF));
 
 CREATE TABLE Telefone_Pessoa (
     CPF_Telefone NUMBER,
