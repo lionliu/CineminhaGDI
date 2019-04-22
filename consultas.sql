@@ -19,3 +19,7 @@ FROM Endereco_Pessoa EP
 WHERE EP.Cidade 
 LIKE "Rec%";
 
+UPDATE Pessoa  
+SET Data_Nasc = 23/02/1997
+WHERE Nome_Pessoa = 'Xuliano'; 
+
