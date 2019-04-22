@@ -93,23 +93,18 @@ INSERT INTO Trabalha (CNPJ_Trabalha,ID_Funcionario) VALUES (1001,0001);
 
 --Inserindo Snack_Bar;
 
-INSERT INTO Snack_Bar (ID_Snack_Bar,CNPJ,Horario_Abre,Horario_Fecha) VALUES ()
-
-
-
-
-
-
+INSERT INTO Snack_Bar (ID_Snack_Bar,CNPJ,Horario_Abre,Horario_Fecha) VALUES (0006,8971,'8:00:00','21:00:00')
+INSERT INTO Snack_Bar (ID_Snack_Bar,CNPJ,Horario_Abre,Horario_Fecha) VALUES (1002,1001,'6:00:00','23:00:00')
 
 --Inserindo Produto;
 
-
-
-
-
-
-
-
+INSERT INTO Produto (ID_Produto,ID_Snack_Bar,CNPJ_Snack_Bar,Nome_Produto,Preco) VALUES (9999,0006,8971,'Pipoca',56.99)
+INSERT INTO Produto (ID_Produto,ID_Snack_Bar,CNPJ_Snack_Bar,Nome_Produto,Preco) VALUES (9998,1002,1001,'Pao',00.05)
+INSERT INTO Produto (ID_Produto,ID_Snack_Bar,CNPJ_Snack_Bar,Nome_Produto,Preco) VALUES (9997,0006,8971,'Lion Whey Bar',11.99)
+INSERT INTO Produto (ID_Produto,ID_Snack_Bar,CNPJ_Snack_Bar,Nome_Produto,Preco) VALUES (9996,0006,8971,'Texero Acai',6.99)
+INSERT INTO Produto (ID_Produto,ID_Snack_Bar,CNPJ_Snack_Bar,Nome_Produto,Preco) VALUES (9995,0006,8971,'Jose Little Marmita',9.99)
+INSERT INTO Produto (ID_Produto,ID_Snack_Bar,CNPJ_Snack_Bar,Nome_Produto,Preco) VALUES (9994,0006,8971,'Xuliano Maizena Cookie',3.99)
+INSERT INTO Produto (ID_Produto,ID_Snack_Bar,CNPJ_Snack_Bar,Nome_Produto,Preco) VALUES (9993,0006,8971,'Adiano Empty Bottle of Water',0.99)
 
 --Inserindo Sala;
 
