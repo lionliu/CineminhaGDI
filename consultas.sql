@@ -29,3 +29,8 @@ WHERE Nome_Pessoa = 'PNome';
 SELECT * 
 FROM PESSOA
 ORDER BY nome;
+
+SELECT TC.CNPJ_Telefone 
+FROM Telefone_Cinema TC
+WHERE TC.CNPJ_Telefone
+IS NOT NULL; --aqui poderia ser null tb, para resgatar os cnpj de cinemas que nao tivessem telefone.
