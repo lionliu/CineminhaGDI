@@ -51,7 +51,7 @@ CREATE TABLE Endereco_Pessoa (
 
 CREATE TABLE Funcionario (
     ID_Funcionario NUMBER,
-    ID_Supervisor NUMBER
+    ID_Supervisor NUMBER,
     Salario DECIMAL (4, 2),
     CONSTRAINT Funcionario_pk PRIMARY KEY (ID_Funcionario),
     CONSTRAINT Funcionario_pk2 FOREIGN KEY (ID_Supervisor) REFERENCES Funcionario (ID_Funcionario),
@@ -102,7 +102,7 @@ CREATE TABLE Endereco_Cinema (
 CREATE TABLE Telefone_Cinema (
     CNPJ_Telefone NUMBER,
     telefone NUMBER,
-    CONSTRAINT Telefone_Cinema_pk PRIMARY KEY (CNPJ_Telefone, telefone)
+    CONSTRAINT Telefone_Cinema_pk PRIMARY KEY (CNPJ_Telefone, telefone),
     CONSTRAINT Telefone_Cinema_fk FOREIGN KEY (CNPJ_Telefone) REFERENCES Cinema (CNPJ)
 );
 
