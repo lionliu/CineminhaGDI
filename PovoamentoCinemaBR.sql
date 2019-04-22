@@ -139,40 +139,31 @@ INSERT INTO Genero (ID_Filme,Nome_Genero) VALUES (1351,'Violencia')
 
 --Inserindo Diretor;
 
-
-
-
-
-
-
-
-
-
+INSERT INTO Diretor (ID_Filme,Nome_Diretor) VALUES (1413,'Edo Ardo')
+INSERT INTO Diretor (ID_Filme,Nome_Diretor) VALUES (1416,'Tarantino')
+INSERT INTO Diretor (ID_Filme,Nome_Diretor) VALUES (1351,'Japaum')
+INSERT INTO Diretor (ID_Filme,Nome_Diretor) VALUES (1401,'Russian Brothers')
 
 --Inserindo Ator;
 
-
-
-
-
-
-
-
-
-
-
+INSERT INTO Ator (ID_Filme,Nome_Ator) VALUES (1416,'Bob o esponjo')
+INSERT INTO Ator (ID_Filme,Nome_Ator) VALUES (1416,'Patrico Estrelo')
+INSERT INTO Ator (ID_Filme,Nome_Ator) VALUES (1416,'Lula do PT')
+INSERT INTO Ator (ID_Filme,Nome_Ator) VALUES (1416,'Sand e Jr')
+INSERT INTO Ator (ID_Filme,Nome_Ator) VALUES (1401,'Iron Maiden')
+INSERT INTO Ator (ID_Filme,Nome_Ator) VALUES (1401,'Capetao South America')
+INSERT INTO Ator (ID_Filme,Nome_Ator) VALUES (1401,'Maquina de Combatman')
+INSERT INTO Ator (ID_Filme,Nome_Ator) VALUES (1413,'Edoardo')
+INSERT INTO Ator (ID_Filme,Nome_Ator) VALUES (1401,'Mina Palida')
+INSERT INTO Ator (ID_Filme,Nome_Ator) VALUES (1351,'Inuiashiki')
+INSERT INTO Ator (ID_Filme,Nome_Ator) VALUES (1351,'Shiba Inu')
 
 --Inserindo Ingresso;
 
-
-
-
-
-
-
-
-
-
+INSERT INTO Ingresso (ID_Ingresso,ID_Filme,Preco_Ingresso,Horario) VALUES (3991,1416,14.90,'1:30')
+INSERT INTO Ingresso (ID_Ingresso,ID_Filme,Preco_Ingresso,Horario) VALUES (3992,1401,30.00,'3:00')
+INSERT INTO Ingresso (ID_Ingresso,ID_Filme,Preco_Ingresso,Horario) VALUES (3993,1413,04.90,'1:15')
+INSERT INTO Ingresso (ID_Ingresso,ID_Filme,Preco_Ingresso,Horario) VALUES (3991,1351,10.00,'1:40')
 
 --Inserindo Vende_Ingresso;
 
