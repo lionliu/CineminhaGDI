@@ -23,3 +23,5 @@ UPDATE Pessoa
 SET Data_Nasc = 23/02/1997
 WHERE Nome_Pessoa = 'Xuliano'; 
 
+DELETE FROM Pessoa
+WHERE Nome_Pessoa = 'PNome';
