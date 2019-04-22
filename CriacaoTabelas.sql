@@ -51,6 +51,13 @@ CREATE TABLE Funcionario (
     CONSTRAINT Funcionario_pk PRIMARY KEY (ID_Funcionario),
 );
 
+CREATE TABLE Setor_Funcionario (
+    ID_Funcionario_Setor NUMBER
+    Nome_Setor VARCHAR2(30),
+    CONSTRAINT Setor_pk PRIMARY KEY (ID_Funcionario_Setor, Nome_Setor)
+    CONSTRAINT Telefone_fk FOREIGN KEY (ID_Funcionario_Setor) REFERENCES Funcionario (ID_Funcionario)
+);
+
 CREATE TABLE Funcionario_Supervisor (
     ID_Funcionario NUMBER,
     ID_Supervisor NUMBER,
