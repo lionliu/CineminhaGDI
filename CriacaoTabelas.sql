@@ -147,7 +147,7 @@ ID_Filme NUMBER,
 ID_Sala NUMBER,
 CONSTRAINT Filme_Sala_pk PRIMARY KEY (ID_Filme, ID_Sala),
 CONSTRAINT Filme_Sala_fk FOREIGN KEY (ID_Filme) REFERENCES Filme (ID_Filme),
-CONSTRAINT Filme_Sala_fk2 FOREIGN KEY (ID_Sala) REFERENCES Sala (ID_Sala),
+CONSTRAINT Filme_Sala_fk2 FOREIGN KEY (ID_Sala) REFERENCES Sala (ID_Sala)
 );
 
 CREATE TABLE Genero (
