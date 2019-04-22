@@ -55,7 +55,7 @@ CREATE INDEX indice_sal_func ON Funcionario (Salario);
 
 CREATE TABLE Setor(
 ID_Setor NUMBER,
-Nome_Setor VARCHAR2(30),
+Nome_Setor VARCHAR2(30) NOT NULL,
 CONSTRAINT Setor_pk PRIMARY KEY (ID_Setor)
 );
 
@@ -78,7 +78,7 @@ CONSTRAINT Pessoa_Funcionario_fk2 FOREIGN KEY (ID_Funcionario) REFERENCES Funcio
 CREATE TABLE Cinema (
 CNPJ NUMBER,
 Numero_Salas NUMBER,
-Nome_Cinema VARCHAR2(30),
+Nome_Cinema VARCHAR2(30) NOT NULL,
 CONSTRAINT Cinema_pk PRIMARY KEY (CNPJ)
 );
 
@@ -121,7 +121,7 @@ CREATE TABLE Produto ( --essa tabela só será criada se a Snack_Bar for criada,
 ID_Produto NUMBER,
 ID_Snack_Bar NUMBER,
 CNPJ_Snack_Bar NUMBER,
-Nome_Produto VARCHAR2(30),
+Nome_Produto VARCHAR2(30) NOT NULL,
 Preco DECIMAL(3,2),
 CONSTRAINT Produto_pk PRIMARY KEY (ID_Produto, ID_Snack_Bar),
 CONSTRAINT Produto_fk FOREIGN KEY (ID_Snack_Bar, CNPJ_Snack_Bar) REFERENCES Snack_Bar (ID_Snack_Bar, CNPJ)
@@ -138,7 +138,7 @@ ID_Filme NUMBER,
 Faixa_Etaria NUMBER,
 Data_Inicio DATE,
 Data_Fim DATE,
-Nome_Filme VARCHAR2(30),
+Nome_Filme VARCHAR2(30) NOT NULL,
 CONSTRAINT Filme_pk PRIMARY KEY (ID_Filme)
 );
 
@@ -152,21 +152,21 @@ CONSTRAINT Filme_Sala_fk2 FOREIGN KEY (ID_Sala) REFERENCES Sala (ID_Sala)
 
 CREATE TABLE Genero (
 ID_Filme NUMBER,
-Nome_Genero VARCHAR2(10),
+Nome_Genero VARCHAR2(10) NOT NULL,
 CONSTRAINT Genero_pk PRIMARY KEY (ID_Filme),
 CONSTRAINT Genero_fk FOREIGN KEY (ID_Filme) REFERENCES Filme (ID_Filme)
 );
 
 CREATE TABLE Diretor (
 ID_Filme NUMBER,
-Nome_Diretor VARCHAR2(30),
+Nome_Diretor VARCHAR2(30) NOT NULL,
 CONSTRAINT Diretor_pk PRIMARY KEY (ID_Filme),
 CONSTRAINT Diretor_fk FOREIGN KEY (ID_Filme) REFERENCES Filme (ID_Filme)
 );
 
 CREATE TABLE Ator (
 ID_Filme NUMBER,
-Nome_Ator VARCHAR2(30),
+Nome_Ator VARCHAR2(30) NOT NULL,
 CONSTRAINT Ator_pk PRIMARY KEY (ID_Filme),
 CONSTRAINT Ator_fk FOREIGN KEY (ID_Filme) REFERENCES Filme (ID_Filme)
 );
