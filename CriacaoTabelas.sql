@@ -51,14 +51,6 @@ CONSTRAINT Endereco_Pessoa_pk PRIMARY KEY (CPF_Endereco, CEP),
 CONSTRAINT Endereco_Pessoa_fk FOREIGN KEY (CPF_Endereco) REFERENCES Pessoa (CPF)
 );
 
-CREATE TABLE Funcionario (
-ID_Funcionario NUMBER,
-ID_Supervisor NUMBER,
-Salario DECIMAL (4,2),
-CONSTRAINT Funcionario_pk PRIMARY KEY (ID_Funcionario),
-CONSTRAINT Funcionario_pk2 FOREIGN KEY (ID_Supervisor) REFERENCES Funcionario (ID_Funcionario),
-);
-
 CREATE INDEX indice_sal_func ON Funcionario (Salario);
 
 CREATE TABLE Setor(
