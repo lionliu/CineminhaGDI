@@ -4,7 +4,7 @@ SELECT AVG (I.Preco_Ingresso) FROM Ingresso I;
 
 SELECT MIN (I.Preco_Ingresso) FROM Ingresso I;
 
-SELECT (*) 
+SELECT *
 FROM Ingresso I 
 WHERE I.Preco_Ingresso < COLOCARVALOR; 
 
@@ -25,3 +25,7 @@ WHERE Nome_Pessoa = 'Xuliano';
 
 DELETE FROM Pessoa
 WHERE Nome_Pessoa = 'PNome';
+
+SELECT * 
+FROM PESSOA
+ORDER BY nome;
