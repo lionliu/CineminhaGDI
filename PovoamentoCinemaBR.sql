@@ -12,16 +12,17 @@ INSERT INTO Pessoa (CPF,Nome_Pessoa,Data_Nasc) VALUES (4482, 'Thiago', '05/12/19
 INSERT INTO Pessoa (CPF,Nome_Pessoa,Data_Nasc) VALUES (0000, 'Jesus', '25/12/0000', 'dd/mm/yy')
 INSERT INTO Pessoa (CPF,Nome_Pessoa,Data_Nasc) VALUES (8932, 'Peter', '02/03/2019', 'dd/mm/yy')
 --Inserindo Telefone_Pessoa;
-
-
-
-
-
-
-
-
-
-
+INSERT INTO Telefone_Pessoa (CPF_Telefone,telefone) VALUES (5276,999258866)
+INSERT INTO Telefone_Pessoa (CPF_Telefone,telefone) VALUES (5276,999256688)
+INSERT INTO Telefone_Pessoa (CPF_Telefone,telefone) VALUES (5276,988669925)
+INSERT INTO Telefone_Pessoa (CPF_Telefone,telefone) VALUES (5319,998074926)
+INSERT INTO Telefone_Pessoa (CPF_Telefone,telefone) VALUES (4689,979109563)
+INSERT INTO Telefone_Pessoa (CPF_Telefone,telefone) VALUES (5103,997693261)
+INSERT INTO Telefone_Pessoa (CPF_Telefone,telefone) VALUES (5036,983270414)
+INSERT INTO Telefone_Pessoa (CPF_Telefone,telefone) VALUES (0000,940028922)
+INSERT INTO Telefone_Pessoa (CPF_Telefone,telefone) VALUES (8932,999890929)
+INSERT INTO Telefone_Pessoa (CPF_Telefone,telefone) VALUES (0001,000000001)
+INSERT INTO Telefone_Pessoa (CPF_Telefone,telefone) VALUES (3206,932429666)
 --Inserindo Endereco_Pessoa;
 
 
