@@ -112,18 +112,18 @@ CREATE TABLE Snack_Bar (
 ID_Snack_Bar NUMBER,
 CNPJ NUMBER,
 Horario_Abre TIME, --no oracle live time nao é um tipo de dado caso forem fazer testes modificar.
-Horario_Fecha TIME,
+Horario_Fecha TIME, -- pode colocar timestamp pra rodar... mas ai esse tipo de dado tem a data + hora :/
 CONSTRAINT Snack_Bar_pk PRIMARY KEY (ID_Snack_Bar, CNPJ),
 CONSTRAINT Snack_Bar_fk FOREIGN KEY (CNPJ) REFERENCES Cinema (CNPJ)
 );
 
-CREATE TABLE Produto (
+CREATE TABLE Produto ( --essa tabela só será criada se a Snack_Bar for criada, deve rodar tranquilo no SQL Plus
 ID_Produto NUMBER,
 ID_Snack_Bar NUMBER,
 CNPJ_Snack_Bar NUMBER,
 Nome_Produto VARCHAR2(30),
 Preco DECIMAL(3,2),
-CONSTRAINT Produto_pk PRIMARY KEY (ID_Produto, ID_Snack_Bar)
+CONSTRAINT Produto_pk PRIMARY KEY (ID_Produto, ID_Snack_Bar),
 CONSTRAINT Produto_fk FOREIGN KEY (ID_Snack_Bar, CNPJ_Snack_Bar) REFERENCES Snack_Bar (ID_Snack_Bar, CNPJ)
 );
 
