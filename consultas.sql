@@ -39,3 +39,8 @@ SELECT C.Nome_Cinema, TC.telefone
 FROM Cinema C 
 LEFT OUTER JOIN Telefone_Cinema TC
 ON C.CNPJ=TC.CNPJ_Telefone;
+
+SELECT C.Nome_Cinema, TC.telefone
+FROM Cinema C 
+INNER JOIN Telefone_Cinema TC
+ON C.CNPJ=TC.CNPJ_Telefone;
