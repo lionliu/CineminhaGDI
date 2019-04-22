@@ -1,14 +1,14 @@
 --Inserindo Pessoa;
 
-INSERT INTO Pessoa (CPF,Nome_Pessoa,Data_Nasc) VALUES (0001, 'PNome', '01/01/0001', 'dd/mm/yy');
-INSERT INTO Pessoa (CPF,Nome_Pessoa,Data_Nasc) VALUES (5103, 'Adiano', '24/03/1998', 'dd/mm/yy');
-INSERT INTO Pessoa (CPF,Nome_Pessoa,Data_Nasc) VALUES (5276, 'Leao', '19/03/1998', 'dd/mm/yy');
-INSERT INTO Pessoa (CPF,Nome_Pessoa,Data_Nasc) VALUES (4689, 'Jose', '20/06/1996', 'dd/mm/yy');
-INSERT INTO Pessoa (CPF,Nome_Pessoa,Data_Nasc) VALUES (5319, 'Gabriel', '22/06/1998', 'dd/mm/yy');
-INSERT INTO Pessoa (CPF,Nome_Pessoa,Data_Nasc) VALUES (4371, 'Xuliano', '07/09/1994', 'dd/mm/yy');
-INSERT INTO Pessoa (CPF,Nome_Pessoa,Data_Nasc) VALUES (5036, 'Mendonco', '06/03/1997', 'dd/mm/yy');
-INSERT INTO Pessoa (CPF,Nome_Pessoa,Data_Nasc) VALUES (3206, 'Vaval', '30/07/1978', 'dd/mm/yy');
-INSERT INTO Pessoa (CPF,Nome_Pessoa,Data_Nasc) VALUES (0000, 'Jesus', '25/12/0000', 'dd/mm/yy');
+INSERT INTO Pessoa (CPF,Nome_Pessoa,Data_Nasc) VALUES (0001, 'PNome', to_date('01/01/0001', 'dd/mm/yy'));
+INSERT INTO Pessoa (CPF,Nome_Pessoa,Data_Nasc) VALUES (5103, 'Adiano', to_date('24/03/1998', 'dd/mm/yy'));
+INSERT INTO Pessoa (CPF,Nome_Pessoa,Data_Nasc) VALUES (5276, 'Leao', to_date('19/03/1998', 'dd/mm/yy'));
+INSERT INTO Pessoa (CPF,Nome_Pessoa,Data_Nasc) VALUES (4689, 'Jose', to_date('20/06/1996', 'dd/mm/yy'));
+INSERT INTO Pessoa (CPF,Nome_Pessoa,Data_Nasc) VALUES (5319, 'Gabriel', to_date('22/06/1998', 'dd/mm/yy'));
+INSERT INTO Pessoa (CPF,Nome_Pessoa,Data_Nasc) VALUES (4371, 'Xuliano', to_date('07/09/1994', 'dd/mm/yy'));
+INSERT INTO Pessoa (CPF,Nome_Pessoa,Data_Nasc) VALUES (5036, 'Mendonco', to_date('06/03/1997', 'dd/mm/yy'));
+INSERT INTO Pessoa (CPF,Nome_Pessoa,Data_Nasc) VALUES (3206, 'Vaval', to_date('30/07/1978', 'dd/mm/yy'));
+INSERT INTO Pessoa (CPF,Nome_Pessoa,Data_Nasc) VALUES (0000, 'Jesus', to_date('25/12/0001', 'dd/mm/yy'));
 
 --Inserindo Telefone_Pessoa;
 
