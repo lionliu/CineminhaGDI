@@ -3,7 +3,6 @@ DROP TABLE Telefone_Pessoa;
 DROP TABLE Endereco_Pessoa;
 DROP TABLE Funcionario;
 DROP TABLE Setor;
-DROP TABLE Funcionario_Supervisor;
 DROP TABLE Pessoa_Funcionario;
 DROP TABLE Cinema;
 DROP TABLE Endereco_Cinema;
