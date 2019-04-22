@@ -108,41 +108,34 @@ INSERT INTO Produto (ID_Produto,ID_Snack_Bar,CNPJ_Snack_Bar,Nome_Produto,Preco) 
 
 --Inserindo Sala;
 
-
-
-
-
-
-
+INSERT INTO Sala (ID_Sala,Capacidade) VALUES (4001,30)
+INSERT INTO Sala (ID_Sala,Capacidade) VALUES (4002,30)
+INSERT INTO Sala (ID_Sala,Capacidade) VALUES (4003,40)
+INSERT INTO Sala (ID_Sala,Capacidade) VALUES (4004,50)
 
 --Inserindo Filme;
 
-
-
-
-
-
-
-
+INSERT INTO Filme (ID_Filme, Faixa_Etaria,Data_Inicio,Data_Fim,Nome_Filme) VALUES (1401,14,'24/04/2019','dd/mm/yy',27/06/2019','dd/mm/yy','Vingadores')
+INSERT INTO Filme (ID_Filme, Faixa_Etaria,Data_Inicio,Data_Fim,Nome_Filme) VALUES (1413,18,'17/05/2019','dd/mm/yy',30/06/2019','dd/mm/yy','Cres Pusculus')
+INSERT INTO Filme (ID_Filme, Faixa_Etaria,Data_Inicio,Data_Fim,Nome_Filme) VALUES (1416,10,'14/04/2019','dd/mm/yy',20/06/2019','dd/mm/yy','Bobe e o esponja')
+INSERT INTO Filme (ID_Filme, Faixa_Etaria,Data_Inicio,Data_Fim,Nome_Filme) VALUES (1351,16,'24/05/2019','dd/mm/yy',10/06/2019','dd/mm/yy','Bang the Inuiashiki')
 
 --Inserindo Filme_Sala;
 
-
-
-
-
-
-
-
+INSERT INTO Filme_Sala (ID_Filme,ID_Sala) VALUES (1401,4004)
+INSERT INTO Filme_Sala (ID_Filme,ID_Sala) VALUES (1401,4002)
+INSERT INTO Filme_Sala (ID_Filme,ID_Sala) VALUES (1401,4003)
+INSERT INTO Filme_Sala (ID_Filme,ID_Sala) VALUES (1401,4004)
+INSERT INTO Filme_Sala (ID_Filme,ID_Sala) VALUES (1413,4001)
+INSERT INTO Filme_Sala (ID_Filme,ID_Sala) VALUES (1416,4003)
+INSERT INTO Filme_Sala (ID_Filme,ID_Sala) VALUES (1351,4001)
 
 --Inserindo Genero;
 
-
-
-
-
-
-
+INSERT INTO Genero (ID_Filme,Nome_Genero) VALUES (1401,'Acao')
+INSERT INTO Genero (ID_Filme,Nome_Genero) VALUES (1413,'Drama')
+INSERT INTO Genero (ID_Filme,Nome_Genero) VALUES (1416,'Acao')
+INSERT INTO Genero (ID_Filme,Nome_Genero) VALUES (1351,'Violencia')
 
 --Inserindo Diretor;
 
