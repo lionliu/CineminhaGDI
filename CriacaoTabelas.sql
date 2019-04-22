@@ -47,8 +47,10 @@ CREATE TABLE Endereco_Pessoa (
 
 CREATE TABLE Funcionario (
     ID_Funcionario NUMBER,
+    ID_Supervisor NUMBER
     Salario DECIMAL (4, 2),
     CONSTRAINT Funcionario_pk PRIMARY KEY (ID_Funcionario),
+    CONSTRAINT Funcionario_pk2 FOREIGN KEY (ID_Supervisor) REFERENCES Funcionario (ID_Funcionario),
 );
 
 CREATE TABLE Setor(
@@ -63,14 +65,6 @@ CREATE TABLE Setor_Funcionario (
     CONSTRAINT Setor_pk PRIMARY KEY (ID_Funcionario, ID_Setor)
     CONSTRAINT Setor_fk FOREIGN KEY (ID_Funcionario) REFERENCES Funcionario (ID_Funcionario)
     CONSTRAINT Setor_fk2 FOREIGN KEY (ID_Setor) REFERENCES Setor (ID_Setor)
-);
-
-CREATE TABLE Funcionario_Supervisor (
-    ID_Funcionario NUMBER,
-    ID_Supervisor NUMBER,
-    CONSTRAINT Funcionario_Supervisor_pk PRIMARY KEY (ID_Funcionario, ID_Supervisor),
-    CONSTRAINT Funcionario_Supervisor_fk FOREIGN KEY (ID_Funcionario) REFERENCES Funcionario (ID_Funcionario)
-    CONSTRAINT Funcionario_Supervisor_fk2 FOREIGN KEY (ID_Supervisor) REFERENCES Funcionario (ID_Funcionario)
 );
 
 CREATE TABLE Pessoa_Funcionario (
