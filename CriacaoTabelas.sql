@@ -120,10 +120,11 @@ CONSTRAINT Snack_Bar_fk FOREIGN KEY (CNPJ) REFERENCES Cinema (CNPJ)
 CREATE TABLE Produto (
 ID_Produto NUMBER,
 ID_Snack_Bar NUMBER,
+CNPJ_Snack_Bar NUMBER,
 Nome_Produto VARCHAR2(30),
-Preco DECIMAL(3, 2),
-CONSTRAINT Produto_pk PRIMARY KEY (ID_Produto, ID_Snack_Bar),
-CONSTRAINT Produto_fk FOREIGN KEY (ID_Snack_Bar) REFERENCES Snack_Bar (ID_Snack_Bar)
+Preco DECIMAL(3,2),
+CONSTRAINT Produto_pk PRIMARY KEY (ID_Produto, ID_Snack_Bar)
+CONSTRAINT Produto_fk FOREIGN KEY (ID_Snack_Bar, CNPJ_Snack_Bar) REFERENCES Snack_Bar (ID_Snack_Bar, CNPJ)
 );
 
 CREATE TABLE Sala (
