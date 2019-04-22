@@ -39,47 +39,37 @@ INSERT INTO Endereco_Pessoa (CPF_Endereco,CEP,Rua,Bairro,Cidade,Numero_Endereco)
 
 --Inserindo Funcionario;
 
-
-
-
-
-
-
+INSERT INTO Funcionario (ID_Funcionario,ID_Supervisor,Salario) VALUES (0001,NULL,4050.25)
+INSERT INTO Funcionario (ID_Funcionario,ID_Supervisor,Salario) VALUES (0002,0001,2025.12)
+INSERT INTO Funcionario (ID_Funcionario,ID_Supervisor,Salario) VALUES (0003,0001,1012.62)
+INSERT INTO Funcionario (ID_Funcionario,ID_Supervisor,Salario) VALUES (0004,NULL,3268.15)
 
 --Inserindo Setor;
 
+INSERT INTO Setor (ID_Setor,Nome_Setor) VALUES (0001,'Administracao')
+INSERT INTO Setor (ID_Setor,Nome_Setor) VALUES (0002,'Caixa')
+INSERT INTO Setor (ID_Setor,Nome_Setor) VALUES (0003,'Seguranca')
+INSERT INTO Setor (ID_Setor,Nome_Setor) VALUES (0004,'ALGO')
+INSERT INTO Setor (ID_Setor,Nome_Setor) VALUES (0005,'Operacoes Estruturadas')
 
+--Inserindo Setor_Funcionario
 
-
-
-
-
-
-
-
---Inserindo Funcionario_Supervisor;
-
-
-
-
-
-
-
+INSERT INTO Setor_Funcionario (ID_Setor,ID_Funcionario) VALUES (0001,0001)
+INSERT INTO Setor_Funcionario (ID_Setor,ID_Funcionario) VALUES (0003,0001)
+INSERT INTO Setor_Funcionario (ID_Setor,ID_Funcionario) VALUES (0002,0002)
+INSERT INTO Setor_Funcionario (ID_Setor,ID_Funcionario) VALUES (0004,0003)
+INSERT INTO Setor_Funcionario (ID_Setor,ID_Funcionario) VALUES (0001,0004)
+INSERT INTO Setor_Funcionario (ID_Setor,ID_Funcionario) VALUES (0002,0004)
+INSERT INTO Setor_Funcionario (ID_Setor,ID_Funcionario) VALUES (0005,0004)
 
 --Inserindo Pessoa_Funcionario;
 
-
-
-
-
-
-
-
-
-
+INSERT INTO Pessoa_Funcionario (CPF,ID_Funcionario) VALUES (0000,0001)
+INSERT INTO Pessoa_Funcionario (CPF,ID_Funcionario) VALUES (4371,0002)
+INSERT INTO Pessoa_Funcionario (CPF,ID_Funcionario) VALUES (5036,0003)
+INSERT INTO Pessoa_Funcionario (CPF,ID_Funcionario) VALUES (3206,0004)
 
 --Inserindo Cinema;
-
 
 
 
