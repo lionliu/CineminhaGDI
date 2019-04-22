@@ -180,8 +180,11 @@ CREATE TABLE Ingresso (
     Preco_Ingresso DECIMAL(2, 2),
     Horario TIMESTAMP,
     CONSTRAINT Ingresso_pk PRIMARY KEY (ID_Ingresso),
-    CONSTRAINT Ingresso_fk FOREIGN KEY (ID_Filme) REFERENCES Filme (ID_Filme)
+    CONSTRAINT Ingresso_fk FOREIGN KEY (ID_Filme) REFERENCES Filme (ID_Filme),
+    CONSTRAINT Ingresso_check CHECK (Preco_Ingresso >= 0.50)
 );
+                                       
+                                       
 
 CREATE TABLE Vende_Ingresso (
     ID_Ingresso NUMBER,
