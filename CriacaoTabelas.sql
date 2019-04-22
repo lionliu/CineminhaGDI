@@ -55,16 +55,16 @@ CREATE TABLE Funcionario (
 );
 
 CREATE TABLE Setor(
-    ID_Setor NUMBER
+    ID_Setor NUMBER,
     Nome_Setor VARCHAR2(30),
     CONSTRAINT Setor_pk PRIMARY KEY (ID_Setor)
 );
 
 CREATE TABLE Setor_Funcionario (
-    ID_Funcionario NUMBER
+    ID_Funcionario NUMBER,
     ID_Setor NUMBER,
-    CONSTRAINT Setor_pk PRIMARY KEY (ID_Funcionario, ID_Setor)
-    CONSTRAINT Setor_fk FOREIGN KEY (ID_Funcionario) REFERENCES Funcionario (ID_Funcionario)
+    CONSTRAINT Setor_pk PRIMARY KEY (ID_Funcionario, ID_Setor),
+    CONSTRAINT Setor_fk FOREIGN KEY (ID_Funcionario) REFERENCES Funcionario (ID_Funcionario),
     CONSTRAINT Setor_fk2 FOREIGN KEY (ID_Setor) REFERENCES Setor (ID_Setor)
 );
 
@@ -153,21 +153,21 @@ CREATE TABLE Filme_Sala (
 CREATE TABLE Genero (
     ID_Filme NUMBER,
     Nome_Genero VARCHAR2(10),
-    CONSTRAINT Genero_pk PRIMARY KEY (ID_Filme)
+    CONSTRAINT Genero_pk PRIMARY KEY (ID_Filme),
     CONSTRAINT Genero_fk FOREIGN KEY (ID_Filme) REFERENCES Filme (ID_Filme)
 );
 
 CREATE TABLE Diretor (
     ID_Filme NUMBER,
     Nome_Diretor VARCHAR2(30),
-    CONSTRAINT Diretor_pk PRIMARY KEY (ID_Filme)
+    CONSTRAINT Diretor_pk PRIMARY KEY (ID_Filme),
     CONSTRAINT Diretor_fk FOREIGN KEY (ID_Filme) REFERENCES Filme (ID_Filme)
 );
 
 CREATE TABLE Ator (
     ID_Filme NUMBER,
     Nome_Ator VARCHAR2(30),
-    CONSTRAINT Ator_pk PRIMARY KEY (ID_Filme)
+    CONSTRAINT Ator_pk PRIMARY KEY (ID_Filme),
     CONSTRAINT Ator_fk FOREIGN KEY (ID_Filme) REFERENCES Filme (ID_Filme)
 );
 
