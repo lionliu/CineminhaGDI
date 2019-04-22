@@ -185,14 +185,12 @@ CONSTRAINT Ingresso_check CHECK (Preco_Ingresso >= 0.50)
 
 CREATE TABLE Vende_Ingresso (
 ID_Ingresso NUMBER,
-ID_Filme NUMBER,
 CPF NUMBER,
 ID_Funcionario NUMBER,
-CONSTRAINT Vende_Ingresso_pk PRIMARY KEY (ID_Ingresso, CPF, ID_Filme, ID_Funcionario),
+CONSTRAINT Vende_Ingresso_pk PRIMARY KEY (ID_Ingresso, CPF, ID_Funcionario),
 CONSTRAINT Vende_Ingresso_fk FOREIGN KEY (ID_Ingresso) REFERENCES Ingresso (ID_Ingresso),
 CONSTRAINT Vende_Ingresso_fk2 FOREIGN KEY (CPF) REFERENCES Pessoa (CPF),
-CONSTRAINT Vende_Ingresso_fk3 FOREIGN KEY (ID_Filme) REFERENCES Filme (ID_Filme),
-CONSTRAINT Vende_Ingresso_fk4 FOREIGN KEY (ID_Funcionario) REFERENCES Funcionario (ID_Funcionario)
+CONSTRAINT Vende_Ingresso_fk3 FOREIGN KEY (ID_Funcionario) REFERENCES Funcionario (ID_Funcionario)
 );
 
 CREATE TABLE Exibe (
