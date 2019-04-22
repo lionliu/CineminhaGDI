@@ -34,3 +34,8 @@ SELECT TC.CNPJ_Telefone
 FROM Telefone_Cinema TC
 WHERE TC.CNPJ_Telefone
 IS NOT NULL; --aqui poderia ser null tb, para resgatar os cnpj de cinemas que nao tivessem telefone.
+
+SELECT C.Nome_Cinema, TC.telefone
+FROM Cinema C 
+LEFT OUTER JOIN Telefone_Cinema TC
+ON C.CNPJ=TC.CNPJ_Telefone;
