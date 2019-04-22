@@ -202,3 +202,10 @@ CONSTRAINT Exibe_fk FOREIGN KEY (ID_Sala) REFERENCES Sala (ID_Sala),
 CONSTRAINT Exibe_fk2 FOREIGN KEY (ID_Filme) REFERENCES Filme (ID_Filme),
 CONSTRAINT Exibe_fk3 FOREIGN KEY (CPF) REFERENCES Pessoa (CPF)
 );
+
+CREATE TABLE Telefone_Pessoa (
+CPF_Telefone NUMBER,
+telefone NUMBER,
+CONSTRAINT Telefone_Pessoa_pk PRIMARY KEY (CPF_Telefone, telefone),
+CONSTRAINT Telefone_Pessoa_fk FOREIGN KEY (CPF_Telefone) REFERENCES Pessoa (CPF)
+);
