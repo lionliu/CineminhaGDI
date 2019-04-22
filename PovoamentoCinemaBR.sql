@@ -75,7 +75,7 @@ INSERT INTO Cinema (CNPJ,Numero_Salas,Nome_Cinema) VALUES (8971,1,'Assembleia de
 
 --Inserindo Endereco_Cinema;
 
-INSERT INTO Endereco_Cinema (CNPJ_Endereco, CEP, Rua,Bairro, Cidade, Numero_Endereco) VALUES (1001,4171,'Da Paz','Nuvem 2','Ceu',8969,);
+INSERT INTO Endereco_Cinema (CNPJ_Endereco, CEP, Rua,Bairro, Cidade, Numero_Endereco) VALUES (1001,4171,'Da Paz','Nuvem 2','Ceu','8969');
 INSERT INTO Endereco_Cinema (CNPJ_Endereco, CEP, Rua,Bairro, Cidade, Numero_Endereco) VALUES (8971,9821,'Paranaue','Paranaua','Recife','697');
 
 --Inserindo Telefone_Cinema;
