@@ -98,13 +98,13 @@ INSERT INTO Snack_Bar (ID_Snack_Bar,CNPJ,Horario_Abre,Horario_Fecha) VALUES (100
 
 --Inserindo Produto;
 
-INSERT INTO Produto (ID_Produto,ID_Snack_Bar,CNPJ_Snack_Bar,Nome_Produto,Preco) VALUES (9999,0006,8971,'Pipoca',56.99);
-INSERT INTO Produto (ID_Produto,ID_Snack_Bar,CNPJ_Snack_Bar,Nome_Produto,Preco) VALUES (9998,1002,1001,'Pao',00.05);
-INSERT INTO Produto (ID_Produto,ID_Snack_Bar,CNPJ_Snack_Bar,Nome_Produto,Preco) VALUES (9997,0006,8971,'Lion Whey Bar',11.99);
-INSERT INTO Produto (ID_Produto,ID_Snack_Bar,CNPJ_Snack_Bar,Nome_Produto,Preco) VALUES (9996,0006,8971,'Texero Acai',6.99);
-INSERT INTO Produto (ID_Produto,ID_Snack_Bar,CNPJ_Snack_Bar,Nome_Produto,Preco) VALUES (9995,0006,8971,'Jose Little Marmita',9.99);
-INSERT INTO Produto (ID_Produto,ID_Snack_Bar,CNPJ_Snack_Bar,Nome_Produto,Preco) VALUES (9994,0006,8971,'Xuliano Maizena Cookie',3.99);
-INSERT INTO Produto (ID_Produto,ID_Snack_Bar,CNPJ_Snack_Bar,Nome_Produto,Preco) VALUES (9993,0006,8971,'Adiano Empty Bottle of Water',0.99);
+INSERT INTO Produto (ID_Produto,ID_Snack_Bar,CNPJ_Snack_Bar,Nome_Produto,Preco) VALUES (ID_Produto.NEXTVAL,0006,8971,'Pipoca',56.99);
+INSERT INTO Produto (ID_Produto,ID_Snack_Bar,CNPJ_Snack_Bar,Nome_Produto,Preco) VALUES (ID_Produto.NEXTVAL,1002,1001,'Pao',00.05);
+INSERT INTO Produto (ID_Produto,ID_Snack_Bar,CNPJ_Snack_Bar,Nome_Produto,Preco) VALUES (ID_Produto.NEXTVAL,0006,8971,'Lion Whey Bar',11.99);
+INSERT INTO Produto (ID_Produto,ID_Snack_Bar,CNPJ_Snack_Bar,Nome_Produto,Preco) VALUES (ID_Produto.NEXTVAL,0006,8971,'Texero Acai',6.99);
+INSERT INTO Produto (ID_Produto,ID_Snack_Bar,CNPJ_Snack_Bar,Nome_Produto,Preco) VALUES (ID_Produto.NEXTVAL,0006,8971,'Jose Little Marmita',9.99);
+INSERT INTO Produto (ID_Produto,ID_Snack_Bar,CNPJ_Snack_Bar,Nome_Produto,Preco) VALUES (ID_Produto.NEXTVAL,0006,8971,'Xuliano Maizena Cookie',3.99);
+INSERT INTO Produto (ID_Produto,ID_Snack_Bar,CNPJ_Snack_Bar,Nome_Produto,Preco) VALUES (ID_Produto.NEXTVAL,0006,8971,'Adiano Empty Bottle of Water',0.99);
 
 --Inserindo Sala;
 
