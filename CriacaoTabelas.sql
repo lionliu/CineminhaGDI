@@ -33,7 +33,7 @@ ADD (CONSTRAINT Pessoa_pk PRIMARY KEY (CPF));
 CREATE TABLE Funcionario(
 ID_Funcionario NUMBER,
 ID_Supervisor NUMBER,
-Salario DECIMAL (4,2),
+Salario DECIMAL (4,4), -- para evitar problemas com oracle live vamos deixar 4.4
 CONSTRAINT Funcionario_pk PRIMARY KEY (ID_Funcionario)
 );
 --é preciso alterar somente depois senao não roda no oracle live.
