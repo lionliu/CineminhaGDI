@@ -1,4 +1,10 @@
 --criação de tipo usando record 
+DECLARE
+TYPE TYPE_CINEMA IS RECORD(
+	CNPJ NUMBER,
+	NUMERO_SALAS NUMBER,
+	NOME VARCHAR2(30)
+);
 
 --uso de estrutura tipo table
 
