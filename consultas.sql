@@ -84,3 +84,13 @@ ALL (
     SELECT Data_Nasc 
     FROM Pessoa
 );
+
+SELECT Nome_Genero, Count(*) 
+FROM Genero 
+GROUP BY Nome_Genero;
+
+SELECT Nome_Genero, 
+Count(*) AS MAISde1filme 
+FROM Genero 
+GROUP BY Nome_Genero 
+HAVING Count(*) > 1; 
