@@ -93,8 +93,8 @@ INSERT INTO Trabalha (CNPJ_Trabalha,ID_Funcionario) VALUES (1001,0001);
 
 --Inserindo Snack_Bar;
 
-INSERT INTO Snack_Bar (ID_Snack_Bar,CNPJ,Horario_Abre,Horario_Fecha) VALUES (0006,8971,'8:00:00','21:00:00');
-INSERT INTO Snack_Bar (ID_Snack_Bar,CNPJ,Horario_Abre,Horario_Fecha) VALUES (1002,1001,'6:00:00','23:00:00');
+INSERT INTO Snack_Bar (ID_Snack_Bar,CNPJ,Horario_Abre,Horario_Fecha) VALUES (0006,8971,timestamp '2019-04-23 8:00:00',timestamp '2019-04-23 21:00:00');
+INSERT INTO Snack_Bar (ID_Snack_Bar,CNPJ,Horario_Abre,Horario_Fecha) VALUES (1002,1001,timestamp '2019-04-23 6:00:00',timestamp '2019-04-23 23:00:00');
 
 --Inserindo Produto;
 
