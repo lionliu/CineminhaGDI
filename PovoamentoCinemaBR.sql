@@ -9,6 +9,7 @@ INSERT INTO Pessoa (CPF,Nome_Pessoa,Data_Nasc) VALUES (4371, 'Xuliano', to_date(
 INSERT INTO Pessoa (CPF,Nome_Pessoa,Data_Nasc) VALUES (5036, 'Mendonco', to_date('06/03/1997', 'dd/mm/yy'));
 INSERT INTO Pessoa (CPF,Nome_Pessoa,Data_Nasc) VALUES (3206, 'Vaval', to_date('30/07/1978', 'dd/mm/yy'));
 INSERT INTO Pessoa (CPF,Nome_Pessoa,Data_Nasc) VALUES (0000, 'Jesus', to_date('25/12/0001', 'dd/mm/yy'));
+INSERT INTO Pessoa (CPF,Nome_Pessoa,Data_Nasc) VALUES (5678, 'SereiExcluido', to_date('25/12/0021', 'dd/mm/yy'));
 
 --Inserindo Telefone_Pessoa;
 
