@@ -115,10 +115,10 @@ INSERT INTO Sala (ID_Sala,Capacidade) VALUES (4004,50)
 
 --Inserindo Filme;
 
-INSERT INTO Filme (ID_Filme, Faixa_Etaria,Data_Inicio,Data_Fim,Nome_Filme) VALUES (1401,14,'24/04/2019','dd/mm/yy',27/06/2019','dd/mm/yy','Vingadores')
-INSERT INTO Filme (ID_Filme, Faixa_Etaria,Data_Inicio,Data_Fim,Nome_Filme) VALUES (1413,18,'17/05/2019','dd/mm/yy',30/06/2019','dd/mm/yy','Cres Pusculus')
-INSERT INTO Filme (ID_Filme, Faixa_Etaria,Data_Inicio,Data_Fim,Nome_Filme) VALUES (1416,10,'14/04/2019','dd/mm/yy',20/06/2019','dd/mm/yy','Bobe e o esponja')
-INSERT INTO Filme (ID_Filme, Faixa_Etaria,Data_Inicio,Data_Fim,Nome_Filme) VALUES (1351,16,'24/05/2019','dd/mm/yy',10/06/2019','dd/mm/yy','Bang the Inuiashiki')
+INSERT INTO Filme (ID_Filme, Faixa_Etaria,Data_Inicio,Data_Fim,Nome_Filme) VALUES (1401,14,to_date('24/04/2019','dd/mm/yy'),to_date('27/06/2019','dd/mm/yy'),'Vingadores')
+INSERT INTO Filme (ID_Filme, Faixa_Etaria,Data_Inicio,Data_Fim,Nome_Filme) VALUES (1413,18,to_date('17/05/2019','dd/mm/yy'),to_date('30/06/2019','dd/mm/yy'),'Cres Pusculus')
+INSERT INTO Filme (ID_Filme, Faixa_Etaria,Data_Inicio,Data_Fim,Nome_Filme) VALUES (1416,10,to_date('14/04/2019','dd/mm/yy'),to_date('20/06/2019','dd/mm/yy'),'Bobe e o esponja')
+INSERT INTO Filme (ID_Filme, Faixa_Etaria,Data_Inicio,Data_Fim,Nome_Filme) VALUES (1351,16,to_date('24/05/2019','dd/mm/yy'),to_date('10/06/2019','dd/mm/yy'),'Bang the Inuiashiki')
 
 --Inserindo Filme_Sala;
 
