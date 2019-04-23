@@ -44,3 +44,7 @@ SELECT C.Nome_Cinema, TC.telefone
 FROM Cinema C 
 INNER JOIN Telefone_Cinema TC
 ON C.CNPJ=TC.CNPJ_Telefone;
+
+SELECT Bairro FROM Endereco_Pessoa WHERE Bairro IS NOT NULL 
+UNION 
+SELECT Bairro FROM Endereco_Cinema WHERE Bairro IS NOT NULL;
