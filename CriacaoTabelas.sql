@@ -122,7 +122,7 @@ ID_Produto NUMBER,
 ID_Snack_Bar NUMBER,
 CNPJ_Snack_Bar NUMBER,
 Nome_Produto VARCHAR2(30) NOT NULL,
-Preco DECIMAL(4,4), --para evitar problemas com oracle live vamos deixar 5,5 a nivel bancário de minucia!
+Preco DECIMAL(6,2), 
 CONSTRAINT Produto_pk PRIMARY KEY (ID_Produto, ID_Snack_Bar),
 CONSTRAINT Produto_fk FOREIGN KEY (ID_Snack_Bar, CNPJ_Snack_Bar) REFERENCES Snack_Bar (ID_Snack_Bar, CNPJ)
 );
@@ -174,7 +174,7 @@ CONSTRAINT Ator_fk FOREIGN KEY (ID_Filme) REFERENCES Filme (ID_Filme)
 CREATE TABLE Ingresso (
 ID_Ingresso NUMBER,
 ID_Filme NUMBER,
-Preco_Ingresso DECIMAL(2, 2),
+Preco_Ingresso DECIMAL(4, 2),
 Horario TIMESTAMP,
 CONSTRAINT Ingresso_pk PRIMARY KEY (ID_Ingresso),
 CONSTRAINT Ingresso_fk FOREIGN KEY (ID_Filme) REFERENCES Filme (ID_Filme),
