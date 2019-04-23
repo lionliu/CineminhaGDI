@@ -8,11 +8,14 @@ SELECT *
 FROM Ingresso I 
 WHERE I.Preco_Ingresso < 15.00; 
 
-SELECT COUNT(I.ID_Filme), I.Horario 
-FROM Ingresso I 
-WHERE I.Preco_Ingresso > 9.99 
-AND I.Horario IN ('2019-03-24 13:30:00', '2019-08-24 13:30:00')
-AND I.ID_Filme BETWEEN 1410 AND 1430;
+SELECT I.ID_Filme, I.Horario FROM Ingresso I 
+WHERE I.Preco_Ingresso >  9.99 
+AND I.ID_Filme 
+BETWEEN 1310 AND 1403;
+
+SELECT I.ID_Filme, I.Horario FROM Ingresso I 
+WHERE I.Preco_Ingresso >  13.99 
+AND I.ID_Filme IN (1416);
 
 SELECT EP.Bairro, EP.Cidade 
 FROM Endereco_Pessoa EP 
