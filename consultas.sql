@@ -6,7 +6,7 @@ SELECT MIN (I.Preco_Ingresso) FROM Ingresso I;
 
 SELECT *
 FROM Ingresso I 
-WHERE I.Preco_Ingresso < COLOCARVALOR; 
+WHERE I.Preco_Ingresso < 15.00; 
 
 SELECT COUNT(I.ID_Filme), I.Horario 
 FROM Ingresso I 
