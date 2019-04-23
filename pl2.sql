@@ -7,7 +7,7 @@ WHERE Capacidade > (SELECT AVG(Capacidade)
     
 -- Cursor para printar os telefones da pessoa que tem o cpf 5276
 -- Ele lançará uma exceção caso o cursor não tiver sido manipulado corretamente.
-set server output on;
+-- set server output on;
 DECLARE
 v_telefone Telefone_Pessoa.telefone%TYPE;
 v_CPF_Telefone Telefone_Pessoa.CPF_telefone%TYPE:=5267;
@@ -23,7 +23,7 @@ BEGIN
         FETCH c_telefone INTO v_telefone;
         EXIT WHEN c_telefone%NOTFOUND;
         DBMS_OUTPUT.PUT_LINE(TO_CHAR(v_telefone));
-    END LOOP
+    END LOOP;
     CLOSE c_telefone;
 EXCEPTION
     WHEN INVALID_CURSOR THEN
