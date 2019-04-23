@@ -73,3 +73,11 @@ ANY (
     SELECT Faixa_Etaria
     FROM Filme
 );
+
+SELECT P.Nome_Pessoa, P.Data_Nasc
+FROM Pessoa P
+WHERE P.Data_Nasc <=
+ALL (
+    SELECT Data_Nasc 
+    FROM Pessoa
+);
