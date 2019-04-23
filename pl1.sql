@@ -5,9 +5,10 @@ TYPE TYPE_CINEMA IS RECORD(
 	NUMERO_SALAS NUMBER,
 	NOME VARCHAR2(30)
 );
-
+cineminha TYPE_CINEMA := TYPE_CINEMA();
 --uso de estrutura tipo table
-
+TYPE TYPE_CINEMA_TABLE IS TABLE OF TYPE_CINEMA
+INDEX BY BINARY_INTEGER;
 --bloco anonimo
 
 --create procedure
