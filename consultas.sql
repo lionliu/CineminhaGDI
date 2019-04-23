@@ -48,3 +48,13 @@ ON C.CNPJ=TC.CNPJ_Telefone;
 SELECT Bairro FROM Endereco_Pessoa WHERE Bairro IS NOT NULL 
 UNION 
 SELECT Bairro FROM Endereco_Cinema WHERE Bairro IS NOT NULL;
+
+SELECT P.Nome_Pessoa
+FROM Pessoa P
+WHERE P.CPF
+IN (
+    SELECT E.CPF
+    FROM Exibe E, Filme F
+    WHERE E.ID_Filme = F.ID_Filme
+    AND F.Nome_Filme = 'Vingadores'
+);
