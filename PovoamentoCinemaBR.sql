@@ -125,7 +125,6 @@ INSERT INTO Filme (ID_Filme, Faixa_Etaria,Data_Inicio,Data_Fim,Nome_Filme) VALUE
 INSERT INTO Filme_Sala (ID_Filme,ID_Sala) VALUES (1401,4004);
 INSERT INTO Filme_Sala (ID_Filme,ID_Sala) VALUES (1401,4002);
 INSERT INTO Filme_Sala (ID_Filme,ID_Sala) VALUES (1401,4003);
-INSERT INTO Filme_Sala (ID_Filme,ID_Sala) VALUES (1401,4004);
 INSERT INTO Filme_Sala (ID_Filme,ID_Sala) VALUES (1413,4001);
 INSERT INTO Filme_Sala (ID_Filme,ID_Sala) VALUES (1416,4003);
 INSERT INTO Filme_Sala (ID_Filme,ID_Sala) VALUES (1351,4001);
