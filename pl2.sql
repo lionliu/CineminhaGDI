@@ -26,3 +26,17 @@ BEGIN
     CLOSE c_telefone;
 END;
 /
+
+-- Cursor com FOR que mostra os atores do filme 1401
+DECLARE
+CURSOR c_atores IS
+SELECT Nome_Ator FROM Ator
+WHERE ID_Filme=1401;
+
+BEGIN
+FOR v_reg IN c_atores LOOP
+    DBMS_OUTPUT.PUT_LINE(v_reg.Nome_Ator);
+END LOOP;
+END;
+/
+
