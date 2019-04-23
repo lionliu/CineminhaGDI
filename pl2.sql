@@ -4,7 +4,7 @@ SELECT COUNT(*) INTO qtSalasMaiorMediaCapacidade
 FROM Sala
 WHERE Capacidade > (SELECT AVG(Capacidade) 
     FROM Sala);
-
+    
 -- Cursor para printar os telefones da pessoa que tem o cpf 5276
 set server output on;
 DECLARE
@@ -24,6 +24,9 @@ BEGIN
         DBMS_OUTPUT.PUT_LINE(TO_CHAR(v_telefone));
     END LOOP
     CLOSE c_telefone;
+EXCEPTION
+    WHEN INVALID_CURSOR THEN
+        DBMS_OUTPUT.PUT_LINE('Voce chamou um FETCH antes do OPEN; ou voce chamou um CLOSE antes do OPEN; ou chamou um CLOSE antes do FETCH');
 END;
 /
 
