@@ -48,9 +48,9 @@ FROM Cinema C
 INNER JOIN Telefone_Cinema TC
 ON C.CNPJ=TC.CNPJ_Telefone;
 
-SELECT Bairro FROM Endereco_Pessoa WHERE Bairro IS NOT NULL 
+SELECT Bairro FROM Endereco_Pessoa WHERE Bairro IS NOT NULL -- no slide tem parentese, mas no oracle roda sem
 UNION 
-SELECT Bairro FROM Endereco_Cinema WHERE Bairro IS NOT NULL;
+SELECT Bairro FROM Endereco_Cinema WHERE Bairro IS NOT NULL; no slide tem parentese, mas no oracle roda sem
 
 SELECT P.Nome_Pessoa
 FROM Pessoa P
@@ -95,5 +95,9 @@ FROM Genero
 GROUP BY Nome_Genero 
 HAVING Count(*) > 1; 
 
+CREATE VIEW NomeAtoresEatrizes AS
+SELECT Nome_Ator FROM Ator;
+
+SELECT * FROM NomeAtoresEatrizes;
 
 REVOKE SELECT ON Vende_Ingresso FROM PUBLIC; --essa funcao tem que ter setado voce como adm total o ambiente de SQL, senao n rodará
