@@ -5,14 +5,23 @@ TYPE TYPE_CINEMA IS RECORD(
 	NUMERO_SALAS NUMBER,
 	NOME VARCHAR2(30)
 );
-cineminha TYPE_CINEMA := TYPE_CINEMA();
+cineminha TYPE_CINEMA;
 --uso de estrutura tipo table
 TYPE TYPE_CINEMA_TABLE IS TABLE OF TYPE_CINEMA
 INDEX BY BINARY_INTEGER;
---bloco anonimo
-
 --create procedure
-
+CREATE OR REPLACE PROCEDURE ARMAZENA_CINEMAS(v_CNPJ NUMBER,
+v_Numero_Salas NUMBER,
+v_Nome_Cinema VARCHAR2(30)) IS
+BEGIN
+     INSERT INTO Cinema (CNPJ,Numero_Salas,Nome_Cinema) VALUES (v_CNPJ,v_Numero_Salas,v_Nome_Cinema);
+END ARMAZENA_CINEMAS;
+/
+--bloco anonimo
+BEGIN
+ARMAZENA_CINEMAS(0100,666,'aSSEMBLEIA DE sATAANAS');
+ARMAZENA_CINEMAS(0101,123,'UFC-INEMAS');
+END;
 --create function
 	--funcao que retorna o nome do setor da pessoa passada como parametro
 CREATE OR REPLACE FUNCTION setor_onde_trabalha
