@@ -169,11 +169,11 @@ INSERT INTO Ingresso (ID_Ingresso,ID_Filme,Preco_Ingresso,Horario) VALUES (3994,
 INSERT INTO Vende_Ingresso (ID_Ingresso, CPF, ID_Funcionario) VALUES (3992,5319,0002);
 INSERT INTO Vende_Ingresso (ID_Ingresso, CPF, ID_Funcionario) VALUES (3993,5103,0002);
 INSERT INTO Vende_Ingresso (ID_Ingresso, CPF, ID_Funcionario) VALUES (3994,5276,0002);
-INSERT INTO Vende_Ingresso (ID_Ingresso, CPF, ID_Funcionario) VALUES (3995,5036,0002);
-INSERT INTO Vende_Ingresso (ID_Ingresso, CPF, ID_Funcionario) VALUES (3996,4689,0002);
+INSERT INTO Vende_Ingresso (ID_Ingresso, CPF, ID_Funcionario) VALUES (3991,5036,0002);
+INSERT INTO Vende_Ingresso (ID_Ingresso, CPF, ID_Funcionario) VALUES (3992,4689,0002);
 INSERT INTO Vende_Ingresso (ID_Ingresso, CPF, ID_Funcionario) VALUES (3991,0001,0002);
-INSERT INTO Vende_Ingresso (ID_Ingresso, CPF, ID_Funcionario) VALUES (3997,3206,0001);
-INSERT INTO Vende_Ingresso (ID_Ingresso, CPF, ID_Funcionario) VALUES (3998,0001,0001);
+INSERT INTO Vende_Ingresso (ID_Ingresso, CPF, ID_Funcionario) VALUES (3993,3206,0001);
+INSERT INTO Vende_Ingresso (ID_Ingresso, CPF, ID_Funcionario) VALUES (3994,0001,0001);
 
 --Inserindo Exibe;
 
