@@ -21,7 +21,6 @@ INSERT INTO Telefone_Pessoa (CPF_Telefone,telefone) VALUES (4689,979109563);
 INSERT INTO Telefone_Pessoa (CPF_Telefone,telefone) VALUES (5103,997693261);
 INSERT INTO Telefone_Pessoa (CPF_Telefone,telefone) VALUES (5036,983270414);
 INSERT INTO Telefone_Pessoa (CPF_Telefone,telefone) VALUES (0000,940028922);
-INSERT INTO Telefone_Pessoa (CPF_Telefone,telefone) VALUES (8932,999890929);
 INSERT INTO Telefone_Pessoa (CPF_Telefone,telefone) VALUES (0001,000000001);
 INSERT INTO Telefone_Pessoa (CPF_Telefone,telefone) VALUES (3206,932429666);
 
