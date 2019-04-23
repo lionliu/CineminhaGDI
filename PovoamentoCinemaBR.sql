@@ -93,95 +93,95 @@ INSERT INTO Trabalha (CNPJ_Trabalha,ID_Funcionario) VALUES (1001,0001);
 
 --Inserindo Snack_Bar;
 
-INSERT INTO Snack_Bar (ID_Snack_Bar,CNPJ,Horario_Abre,Horario_Fecha) VALUES (0006,8971,'8:00:00','21:00:00')
-INSERT INTO Snack_Bar (ID_Snack_Bar,CNPJ,Horario_Abre,Horario_Fecha) VALUES (1002,1001,'6:00:00','23:00:00')
+INSERT INTO Snack_Bar (ID_Snack_Bar,CNPJ,Horario_Abre,Horario_Fecha) VALUES (0006,8971,'8:00:00','21:00:00');
+INSERT INTO Snack_Bar (ID_Snack_Bar,CNPJ,Horario_Abre,Horario_Fecha) VALUES (1002,1001,'6:00:00','23:00:00');
 
 --Inserindo Produto;
 
-INSERT INTO Produto (ID_Produto,ID_Snack_Bar,CNPJ_Snack_Bar,Nome_Produto,Preco) VALUES (9999,0006,8971,'Pipoca',56.99)
-INSERT INTO Produto (ID_Produto,ID_Snack_Bar,CNPJ_Snack_Bar,Nome_Produto,Preco) VALUES (9998,1002,1001,'Pao',00.05)
-INSERT INTO Produto (ID_Produto,ID_Snack_Bar,CNPJ_Snack_Bar,Nome_Produto,Preco) VALUES (9997,0006,8971,'Lion Whey Bar',11.99)
-INSERT INTO Produto (ID_Produto,ID_Snack_Bar,CNPJ_Snack_Bar,Nome_Produto,Preco) VALUES (9996,0006,8971,'Texero Acai',6.99)
-INSERT INTO Produto (ID_Produto,ID_Snack_Bar,CNPJ_Snack_Bar,Nome_Produto,Preco) VALUES (9995,0006,8971,'Jose Little Marmita',9.99)
-INSERT INTO Produto (ID_Produto,ID_Snack_Bar,CNPJ_Snack_Bar,Nome_Produto,Preco) VALUES (9994,0006,8971,'Xuliano Maizena Cookie',3.99)
-INSERT INTO Produto (ID_Produto,ID_Snack_Bar,CNPJ_Snack_Bar,Nome_Produto,Preco) VALUES (9993,0006,8971,'Adiano Empty Bottle of Water',0.99)
+INSERT INTO Produto (ID_Produto,ID_Snack_Bar,CNPJ_Snack_Bar,Nome_Produto,Preco) VALUES (9999,0006,8971,'Pipoca',56.99);
+INSERT INTO Produto (ID_Produto,ID_Snack_Bar,CNPJ_Snack_Bar,Nome_Produto,Preco) VALUES (9998,1002,1001,'Pao',00.05);
+INSERT INTO Produto (ID_Produto,ID_Snack_Bar,CNPJ_Snack_Bar,Nome_Produto,Preco) VALUES (9997,0006,8971,'Lion Whey Bar',11.99);
+INSERT INTO Produto (ID_Produto,ID_Snack_Bar,CNPJ_Snack_Bar,Nome_Produto,Preco) VALUES (9996,0006,8971,'Texero Acai',6.99);
+INSERT INTO Produto (ID_Produto,ID_Snack_Bar,CNPJ_Snack_Bar,Nome_Produto,Preco) VALUES (9995,0006,8971,'Jose Little Marmita',9.99);
+INSERT INTO Produto (ID_Produto,ID_Snack_Bar,CNPJ_Snack_Bar,Nome_Produto,Preco) VALUES (9994,0006,8971,'Xuliano Maizena Cookie',3.99);
+INSERT INTO Produto (ID_Produto,ID_Snack_Bar,CNPJ_Snack_Bar,Nome_Produto,Preco) VALUES (9993,0006,8971,'Adiano Empty Bottle of Water',0.99);
 
 --Inserindo Sala;
 
-INSERT INTO Sala (ID_Sala,Capacidade) VALUES (4001,30)
-INSERT INTO Sala (ID_Sala,Capacidade) VALUES (4002,30)
-INSERT INTO Sala (ID_Sala,Capacidade) VALUES (4003,40)
-INSERT INTO Sala (ID_Sala,Capacidade) VALUES (4004,50)
+INSERT INTO Sala (ID_Sala,Capacidade) VALUES (4001,30);
+INSERT INTO Sala (ID_Sala,Capacidade) VALUES (4002,30);
+INSERT INTO Sala (ID_Sala,Capacidade) VALUES (4003,40);
+INSERT INTO Sala (ID_Sala,Capacidade) VALUES (4004,50);
 
 --Inserindo Filme;
 
-INSERT INTO Filme (ID_Filme, Faixa_Etaria,Data_Inicio,Data_Fim,Nome_Filme) VALUES (1401,14,to_date('24/04/2019','dd/mm/yy'),to_date('27/06/2019','dd/mm/yy'),'Vingadores')
-INSERT INTO Filme (ID_Filme, Faixa_Etaria,Data_Inicio,Data_Fim,Nome_Filme) VALUES (1413,18,to_date('17/05/2019','dd/mm/yy'),to_date('30/06/2019','dd/mm/yy'),'Cres Pusculus')
-INSERT INTO Filme (ID_Filme, Faixa_Etaria,Data_Inicio,Data_Fim,Nome_Filme) VALUES (1416,10,to_date('14/04/2019','dd/mm/yy'),to_date('20/06/2019','dd/mm/yy'),'Bobe e o esponja')
-INSERT INTO Filme (ID_Filme, Faixa_Etaria,Data_Inicio,Data_Fim,Nome_Filme) VALUES (1351,16,to_date('24/05/2019','dd/mm/yy'),to_date('10/06/2019','dd/mm/yy'),'Bang the Inuiashiki')
+INSERT INTO Filme (ID_Filme, Faixa_Etaria,Data_Inicio,Data_Fim,Nome_Filme) VALUES (1401,14,to_date('24/04/2019','dd/mm/yy'),to_date('27/06/2019','dd/mm/yy'),'Vingadores');
+INSERT INTO Filme (ID_Filme, Faixa_Etaria,Data_Inicio,Data_Fim,Nome_Filme) VALUES (1413,18,to_date('17/05/2019','dd/mm/yy'),to_date('30/06/2019','dd/mm/yy'),'Cres Pusculus');
+INSERT INTO Filme (ID_Filme, Faixa_Etaria,Data_Inicio,Data_Fim,Nome_Filme) VALUES (1416,10,to_date('14/04/2019','dd/mm/yy'),to_date('20/06/2019','dd/mm/yy'),'Bobe e o esponja');
+INSERT INTO Filme (ID_Filme, Faixa_Etaria,Data_Inicio,Data_Fim,Nome_Filme) VALUES (1351,16,to_date('24/05/2019','dd/mm/yy'),to_date('10/06/2019','dd/mm/yy'),'Bang the Inuiashiki');
 
 --Inserindo Filme_Sala;
 
-INSERT INTO Filme_Sala (ID_Filme,ID_Sala) VALUES (1401,4004)
-INSERT INTO Filme_Sala (ID_Filme,ID_Sala) VALUES (1401,4002)
-INSERT INTO Filme_Sala (ID_Filme,ID_Sala) VALUES (1401,4003)
-INSERT INTO Filme_Sala (ID_Filme,ID_Sala) VALUES (1401,4004)
-INSERT INTO Filme_Sala (ID_Filme,ID_Sala) VALUES (1413,4001)
-INSERT INTO Filme_Sala (ID_Filme,ID_Sala) VALUES (1416,4003)
-INSERT INTO Filme_Sala (ID_Filme,ID_Sala) VALUES (1351,4001)
+INSERT INTO Filme_Sala (ID_Filme,ID_Sala) VALUES (1401,4004);
+INSERT INTO Filme_Sala (ID_Filme,ID_Sala) VALUES (1401,4002);
+INSERT INTO Filme_Sala (ID_Filme,ID_Sala) VALUES (1401,4003);
+INSERT INTO Filme_Sala (ID_Filme,ID_Sala) VALUES (1401,4004);
+INSERT INTO Filme_Sala (ID_Filme,ID_Sala) VALUES (1413,4001);
+INSERT INTO Filme_Sala (ID_Filme,ID_Sala) VALUES (1416,4003);
+INSERT INTO Filme_Sala (ID_Filme,ID_Sala) VALUES (1351,4001);
 
 --Inserindo Genero;
 
-INSERT INTO Genero (ID_Filme,Nome_Genero) VALUES (1401,'Acao')
-INSERT INTO Genero (ID_Filme,Nome_Genero) VALUES (1413,'Drama')
-INSERT INTO Genero (ID_Filme,Nome_Genero) VALUES (1416,'Acao')
-INSERT INTO Genero (ID_Filme,Nome_Genero) VALUES (1351,'Violencia')
+INSERT INTO Genero (ID_Filme,Nome_Genero) VALUES (1401,'Acao');
+INSERT INTO Genero (ID_Filme,Nome_Genero) VALUES (1413,'Drama');
+INSERT INTO Genero (ID_Filme,Nome_Genero) VALUES (1416,'Acao');
+INSERT INTO Genero (ID_Filme,Nome_Genero) VALUES (1351,'Violencia');
 
 --Inserindo Diretor;
 
-INSERT INTO Diretor (ID_Filme,Nome_Diretor) VALUES (1413,'Edo Ardo')
-INSERT INTO Diretor (ID_Filme,Nome_Diretor) VALUES (1416,'Tarantino')
-INSERT INTO Diretor (ID_Filme,Nome_Diretor) VALUES (1351,'Japaum')
-INSERT INTO Diretor (ID_Filme,Nome_Diretor) VALUES (1401,'Russian Brothers')
+INSERT INTO Diretor (ID_Filme,Nome_Diretor) VALUES (1413,'Edo Ardo');
+INSERT INTO Diretor (ID_Filme,Nome_Diretor) VALUES (1416,'Tarantino');
+INSERT INTO Diretor (ID_Filme,Nome_Diretor) VALUES (1351,'Japaum');
+INSERT INTO Diretor (ID_Filme,Nome_Diretor) VALUES (1401,'Russian Brothers');
 
 --Inserindo Ator;
 
-INSERT INTO Ator (ID_Filme,Nome_Ator) VALUES (1416,'Bob o esponjo')
-INSERT INTO Ator (ID_Filme,Nome_Ator) VALUES (1416,'Patrico Estrelo')
-INSERT INTO Ator (ID_Filme,Nome_Ator) VALUES (1416,'Lula do PT')
-INSERT INTO Ator (ID_Filme,Nome_Ator) VALUES (1416,'Sand e Jr')
-INSERT INTO Ator (ID_Filme,Nome_Ator) VALUES (1401,'Iron Maiden')
-INSERT INTO Ator (ID_Filme,Nome_Ator) VALUES (1401,'Capetao South America')
-INSERT INTO Ator (ID_Filme,Nome_Ator) VALUES (1401,'Maquina de Combatman')
-INSERT INTO Ator (ID_Filme,Nome_Ator) VALUES (1413,'Edoardo')
-INSERT INTO Ator (ID_Filme,Nome_Ator) VALUES (1401,'Mina Palida')
-INSERT INTO Ator (ID_Filme,Nome_Ator) VALUES (1351,'Inuiashiki')
-INSERT INTO Ator (ID_Filme,Nome_Ator) VALUES (1351,'Shiba Inu')
+INSERT INTO Ator (ID_Filme,Nome_Ator) VALUES (1416,'Bob o esponjo');
+INSERT INTO Ator (ID_Filme,Nome_Ator) VALUES (1416,'Patrico Estrelo');
+INSERT INTO Ator (ID_Filme,Nome_Ator) VALUES (1416,'Lula do PT');
+INSERT INTO Ator (ID_Filme,Nome_Ator) VALUES (1416,'Sand e Jr');
+INSERT INTO Ator (ID_Filme,Nome_Ator) VALUES (1401,'Iron Maiden');
+INSERT INTO Ator (ID_Filme,Nome_Ator) VALUES (1401,'Capetao South America');
+INSERT INTO Ator (ID_Filme,Nome_Ator) VALUES (1401,'Maquina de Combatman');
+INSERT INTO Ator (ID_Filme,Nome_Ator) VALUES (1413,'Edoardo');
+INSERT INTO Ator (ID_Filme,Nome_Ator) VALUES (1401,'Mina Palida');
+INSERT INTO Ator (ID_Filme,Nome_Ator) VALUES (1351,'Inuiashiki');
+INSERT INTO Ator (ID_Filme,Nome_Ator) VALUES (1351,'Shiba Inu');
 
 --Inserindo Ingresso;
 
-INSERT INTO Ingresso (ID_Ingresso,ID_Filme,Preco_Ingresso,Horario) VALUES (3991,1416,14.90,'1:30')
-INSERT INTO Ingresso (ID_Ingresso,ID_Filme,Preco_Ingresso,Horario) VALUES (3992,1401,30.00,'3:00')
-INSERT INTO Ingresso (ID_Ingresso,ID_Filme,Preco_Ingresso,Horario) VALUES (3993,1413,04.90,'1:15')
-INSERT INTO Ingresso (ID_Ingresso,ID_Filme,Preco_Ingresso,Horario) VALUES (3991,1351,10.00,'1:40')
+INSERT INTO Ingresso (ID_Ingresso,ID_Filme,Preco_Ingresso,Horario) VALUES (3991,1416,14.90,'1:30');
+INSERT INTO Ingresso (ID_Ingresso,ID_Filme,Preco_Ingresso,Horario) VALUES (3992,1401,30.00,'3:00');
+INSERT INTO Ingresso (ID_Ingresso,ID_Filme,Preco_Ingresso,Horario) VALUES (3993,1413,04.90,'1:15');
+INSERT INTO Ingresso (ID_Ingresso,ID_Filme,Preco_Ingresso,Horario) VALUES (3991,1351,10.00,'1:40');
 
 --Inserindo Vende_Ingresso;
 
-INSERT INTO Vende_Ingresso (ID_Ingresso, CPF, ID_Funcionario) VALUES (3992,5319,0002)
-INSERT INTO Vende_Ingresso (ID_Ingresso, CPF, ID_Funcionario) VALUES (3993,5103,0002)
-INSERT INTO Vende_Ingresso (ID_Ingresso, CPF, ID_Funcionario) VALUES (3994,5276,0002)
-INSERT INTO Vende_Ingresso (ID_Ingresso, CPF, ID_Funcionario) VALUES (3995,5036,0002)
-INSERT INTO Vende_Ingresso (ID_Ingresso, CPF, ID_Funcionario) VALUES (3996,4689,0002)
-INSERT INTO Vende_Ingresso (ID_Ingresso, CPF, ID_Funcionario) VALUES (3991,0001,0002)
-INSERT INTO Vende_Ingresso (ID_Ingresso, CPF, ID_Funcionario) VALUES (3997,3206,0001)
-INSERT INTO Vende_Ingresso (ID_Ingresso, CPF, ID_Funcionario) VALUES (3998,0001,0001)
+INSERT INTO Vende_Ingresso (ID_Ingresso, CPF, ID_Funcionario) VALUES (3992,5319,0002);
+INSERT INTO Vende_Ingresso (ID_Ingresso, CPF, ID_Funcionario) VALUES (3993,5103,0002);
+INSERT INTO Vende_Ingresso (ID_Ingresso, CPF, ID_Funcionario) VALUES (3994,5276,0002);
+INSERT INTO Vende_Ingresso (ID_Ingresso, CPF, ID_Funcionario) VALUES (3995,5036,0002);
+INSERT INTO Vende_Ingresso (ID_Ingresso, CPF, ID_Funcionario) VALUES (3996,4689,0002);
+INSERT INTO Vende_Ingresso (ID_Ingresso, CPF, ID_Funcionario) VALUES (3991,0001,0002);
+INSERT INTO Vende_Ingresso (ID_Ingresso, CPF, ID_Funcionario) VALUES (3997,3206,0001);
+INSERT INTO Vende_Ingresso (ID_Ingresso, CPF, ID_Funcionario) VALUES (3998,0001,0001);
 
 --Inserindo Exibe;
 
-INSERT INTO Exibe (ID_Sala, ID_Filme, CPF) VALUES (20304,1401,5319)
-INSERT INTO Exibe (ID_Sala, ID_Filme, CPF) VALUES (20304,1401,5103)
-INSERT INTO Exibe (ID_Sala, ID_Filme, CPF) VALUES (20304,1401,5276)
-INSERT INTO Exibe (ID_Sala, ID_Filme, CPF) VALUES (20304,1401,5036)
-INSERT INTO Exibe (ID_Sala, ID_Filme, CPF) VALUES (20305,1416,0001)
-INSERT INTO Exibe (ID_Sala, ID_Filme, CPF) VALUES (20306,1413,3206)
-INSERT INTO Exibe (ID_Sala, ID_Filme, CPF) VALUES (20307,1351,0001)
+INSERT INTO Exibe (ID_Sala, ID_Filme, CPF) VALUES (4001,1401,5319);
+INSERT INTO Exibe (ID_Sala, ID_Filme, CPF) VALUES (4001,1401,5103);
+INSERT INTO Exibe (ID_Sala, ID_Filme, CPF) VALUES (4001,1401,5276);
+INSERT INTO Exibe (ID_Sala, ID_Filme, CPF) VALUES (4001,1401,5036);
+INSERT INTO Exibe (ID_Sala, ID_Filme, CPF) VALUES (4002,1416,0001);
+INSERT INTO Exibe (ID_Sala, ID_Filme, CPF) VALUES (4003,1413,3206);
+INSERT INTO Exibe (ID_Sala, ID_Filme, CPF) VALUES (4004,1351,0001);
