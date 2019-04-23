@@ -8,7 +8,7 @@ SELECT *
 FROM Ingresso I 
 WHERE I.Preco_Ingresso < COLOCARVALOR; 
 
-SELECT COUNT I.ID_Filme, I.Horario 
+SELECT COUNT(I.ID_Filme), I.Horario 
 FROM Ingresso I 
 WHERE I.Preco_Ingresso > COLOCARVALOR 
 AND I.Horario IN ('METRICA1', 'METRICA2')
@@ -17,10 +17,10 @@ AND I.ID_Filme BETWEEN METRICA1 AND METRICA2;
 SELECT EP.Bairro, EP.Cidade 
 FROM Endereco_Pessoa EP 
 WHERE EP.Cidade 
-LIKE "Rec%";
+LIKE 'Rec%';
 
 UPDATE Pessoa  
-SET Data_Nasc = 23/02/1997
+SET Data_Nasc = to_date('23/02/1997', 'dd/mm/yyyy')
 WHERE Nome_Pessoa = 'Xuliano'; 
 
 DELETE FROM Pessoa
@@ -28,7 +28,7 @@ WHERE Nome_Pessoa = 'PNome';
 
 SELECT * 
 FROM PESSOA
-ORDER BY nome;
+ORDER BY Nome_Pessoa;
 
 SELECT TC.CNPJ_Telefone 
 FROM Telefone_Cinema TC
