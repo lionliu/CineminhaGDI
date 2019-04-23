@@ -1,16 +1,8 @@
--- Guardar em qtSalasMaiorMediaCapacidade a quantidade de salas 
--- que tem capacidade acima da média.
-SELECT COUNT(*) INTO qtSalasMaiorMediaCapacidade
-FROM Sala
-WHERE Capacidade > (SELECT AVG(Capacidade) 
-    FROM Sala);
-    
 -- Cursor para printar os telefones da pessoa que tem o cpf 5276
 -- Ele lançará uma exceção caso o cursor não tiver sido manipulado corretamente.
--- set server output on;
 DECLARE
-v_telefone Telefone_Pessoa.telefone%TYPE;
-v_CPF_Telefone Telefone_Pessoa.CPF_telefone%TYPE:=5267;
+v_telefone Telefone_Pessoa.telefone%TYPE,
+v_CPF_Telefone Telefone_Pessoa.CPF_telefone%TYPE:=5276,
 
 CURSOR c_telefone IS 
 SELECT telefone
@@ -44,3 +36,16 @@ END LOOP;
 END;
 /
 
+-- Trigger de linha que printa qual o nome da pessoa que foi atualizada
+CREATE OR REPLACE TRIGGER nomePessoaAtualizada
+AFTER UPDATE ON Pessoa
+FOR EACH ROW
+BEGIN
+    DBMS_OUTPUT.PUT_LINE(:NEW.Nome_Pessoa||' teve dados atualizados');
+END;
+/
+
+-- Teste do trigger de linha
+UPDATE Pessoa  
+SET Data_Nasc = to_date('23/02/1997', 'dd/mm/yyyy')
+WHERE Nome_Pessoa = 'Xuliano'; 
