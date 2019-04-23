@@ -58,3 +58,10 @@ IN (
     WHERE E.ID_Filme = F.ID_Filme
     AND F.Nome_Filme = 'Vingadores'
 );
+
+SELECT P.Nome_Produto
+FROM Produto P
+WHERE P.Preco <= (
+    SELECT AVG(Preco)
+    FROM Produto
+);
