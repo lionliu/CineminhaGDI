@@ -111,8 +111,8 @@ CONSTRAINT Trabalha_fk2 FOREIGN KEY (ID_Funcionario) REFERENCES Funcionario (ID_
 CREATE TABLE Snack_Bar (
 ID_Snack_Bar NUMBER,
 CNPJ NUMBER,
-Horario_Abre TIME, --no oracle live time nao é um tipo de dado caso forem fazer testes modificar.
-Horario_Fecha TIME, -- pode colocar timestamp pra rodar... mas ai esse tipo de dado tem a data + hora :/
+Horario_Abre TIMESTAMP, --no oracle live time nao é um tipo de dado caso forem fazer testes modificar.
+Horario_Fecha TIMESTAMP, -- pode colocar timestamp pra rodar... mas ai esse tipo de dado tem a data + hora :/
 CONSTRAINT Snack_Bar_pk PRIMARY KEY (ID_Snack_Bar, CNPJ),
 CONSTRAINT Snack_Bar_fk FOREIGN KEY (CNPJ) REFERENCES Cinema (CNPJ)
 );
