@@ -10,9 +10,9 @@ WHERE I.Preco_Ingresso < COLOCARVALOR;
 
 SELECT COUNT(I.ID_Filme), I.Horario 
 FROM Ingresso I 
-WHERE I.Preco_Ingresso > COLOCARVALOR 
-AND I.Horario IN ('METRICA1', 'METRICA2')
-AND I.ID_Filme BETWEEN METRICA1 AND METRICA2;
+WHERE I.Preco_Ingresso > 9.99 
+AND I.Horario IN ('2019-03-24 13:30:00', '2019-08-24 13:30:00')
+AND I.ID_Filme BETWEEN 1410 AND 1430;
 
 SELECT EP.Bairro, EP.Cidade 
 FROM Endereco_Pessoa EP 
