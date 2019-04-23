@@ -6,9 +6,30 @@ TYPE TYPE_CINEMA IS RECORD(
 	NOME VARCHAR2(30)
 );
 cineminha TYPE_CINEMA;
+--=================================
 --uso de estrutura tipo table
-TYPE TYPE_CINEMA_TABLE IS TABLE OF TYPE_CINEMA
-INDEX BY BINARY_INTEGER;
+DECLARE
+
+TYPE listaPessoas IS TABLE OF Pessoa%rowtype;
+
+lista listaPessoas :=listaPessoas();
+
+BEGIN
+
+
+    FOR HUMANO IN (
+        SELECT * FROM PESSOA P WHERE P.NOME_PESSOA  LIKE 'A%'
+    ) LOOP
+
+        lista.EXTEND;
+        lista(lista.LAST).nome_pessoa :=HUMANO.nome_pessoa;
+        lista(lista.LAST).cpf :=HUMANO.cpf;
+        lista(lista.LAST).Data_Nasc :=HUMANO.Data_Nasc;
+        
+    END LOOP;
+
+END;
+
 --create procedure
 CREATE OR REPLACE PROCEDURE ARMAZENA_CINEMAS(v_CNPJ NUMBER,
 v_Numero_Salas NUMBER,
@@ -22,6 +43,7 @@ BEGIN
 ARMAZENA_CINEMAS(0100,666,'aSSEMBLEIA DE sATAANAS');
 ARMAZENA_CINEMAS(0101,123,'UFC-INEMAS');
 END;
+
 --create function
 	--funcao que retorna o nome do setor da pessoa passada como parametro
 CREATE OR REPLACE FUNCTION setor_onde_trabalha
@@ -56,9 +78,4 @@ BEGIN
 	
 END setor_onde_trabalha;
 /
-/*
-BEGIN
-SETORJESUS SETOR.NOME_SETOR%TYPE;
-SETORJESUS := SETOR_ONDE_TRABALHA('Jesus');
-END
-*/
+
