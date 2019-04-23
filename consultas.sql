@@ -94,3 +94,6 @@ Count(*) AS MAISde1filme
 FROM Genero 
 GROUP BY Nome_Genero 
 HAVING Count(*) > 1; 
+
+
+REVOKE SELECT ON Vende_Ingresso FROM PUBLIC; --essa funcao tem que ter setado voce como adm total o ambiente de SQL, senao n rodará
