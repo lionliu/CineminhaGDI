@@ -24,7 +24,7 @@ SET Data_Nasc = to_date('23/02/1997', 'dd/mm/yyyy')
 WHERE Nome_Pessoa = 'Xuliano'; 
 
 DELETE FROM Pessoa
-WHERE Nome_Pessoa = 'PNome';
+WHERE Nome_Pessoa = 'SereiExcluido';
 
 SELECT * 
 FROM PESSOA
