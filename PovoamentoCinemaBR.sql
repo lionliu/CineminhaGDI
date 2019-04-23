@@ -162,7 +162,7 @@ INSERT INTO Ator (ID_Filme,Nome_Ator) VALUES (1351,'Shiba Inu');
 INSERT INTO Ingresso (ID_Ingresso,ID_Filme,Preco_Ingresso,Horario) VALUES (3991,1416,14.90,timestamp '2019-04-24 13:30:00');
 INSERT INTO Ingresso (ID_Ingresso,ID_Filme,Preco_Ingresso,Horario) VALUES (3992,1401,30.00,timestamp '2019-05-20 15:00:00');
 INSERT INTO Ingresso (ID_Ingresso,ID_Filme,Preco_Ingresso,Horario) VALUES (3993,1413,04.90,timestamp '2019-04-16 13:15:00');
-INSERT INTO Ingresso (ID_Ingresso,ID_Filme,Preco_Ingresso,Horario) VALUES (3991,1351,10.00,timestamp '2019-05-24 13:40:00');
+INSERT INTO Ingresso (ID_Ingresso,ID_Filme,Preco_Ingresso,Horario) VALUES (3994,1351,10.00,timestamp '2019-05-24 13:40:00');
 
 --Inserindo Vende_Ingresso;
 
