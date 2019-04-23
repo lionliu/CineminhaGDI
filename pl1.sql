@@ -8,17 +8,19 @@
 
 --create function
 	--funcao que retorna o nome do setor da pessoa passada como parametro
-CREATE FUNCTION setor_onde_trabalha(nome_p IN Pessoa.Nome_pessoa%TYPE) 
-RETURN Setor.Nome_Setor%TYPE IS
-Set serveroutput on;
-DECLARE
-	v_setor Setor.Nome_Setor%type;
-	cpfPessoa Pessoa.CPF%type;
-	
+CREATE OR REPLACE FUNCTION setor_onde_trabalha
+( nome_p Pessoa.Nome_pessoa%TYPE) 
+RETURN SETOR.NOME_SETOR%TYPE
+IS 
+    V_SETOR SETOR.NOME_SETOR%TYPE;
+    cpfPessoa Pessoa.CPF%TYPE;
+    
 BEGIN
 
-	SELECT P.CPF FROM Pessoa P 
-	WHERE P.Nome_Pessoa = nome_p
+	SELECT P.CPF INTO cpfPessoa 
+	FROM Pessoa P
+	WHERE P.Nome_Pessoa = nome_p;
+
 	IF nome_p IS NULL THEN 
 		dbms_output.put_line('pessoa nao cadastrada');
 		v_setor := 'inexistente';
@@ -35,4 +37,12 @@ BEGIN
 		END IF;
 	END IF;
 	RETURN v_setor;
-END setor_onde_trabalha
+	
+END setor_onde_trabalha;
+/
+/*
+BEGIN
+SETORJESUS SETOR.NOME_SETOR%TYPE;
+SETORJESUS := SETOR_ONDE_TRABALHA('Jesus');
+END
+*/
