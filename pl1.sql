@@ -7,7 +7,7 @@ TYPE TYPE_CINEMA IS RECORD(
 );
 cineminha TYPE_CINEMA;
 --=================================
---uso de estrutura tipo table
+--uso de estrutura tipo table + %rowtype
 DECLARE
 
 TYPE listaPessoas IS TABLE OF Pessoa%rowtype;
@@ -29,7 +29,7 @@ BEGIN
     END LOOP;
 
 END;
-
+--=================================
 --create procedure
 CREATE OR REPLACE PROCEDURE ARMAZENA_CINEMAS(v_CNPJ NUMBER,
 v_Numero_Salas NUMBER,
@@ -38,13 +38,14 @@ BEGIN
      INSERT INTO Cinema (CNPJ,Numero_Salas,Nome_Cinema) VALUES (v_CNPJ,v_Numero_Salas,v_Nome_Cinema);
 END ARMAZENA_CINEMAS;
 /
+--=================================
 --bloco anonimo
 BEGIN
 ARMAZENA_CINEMAS(0100,666,'aSSEMBLEIA DE sATAANAS');
 ARMAZENA_CINEMAS(0101,123,'UFC-INEMAS');
 END;
-
---create function
+--=================================
+--create function + %type
 	--funcao que retorna o nome do setor da pessoa passada como parametro
 CREATE OR REPLACE FUNCTION setor_onde_trabalha
 ( nome_p Pessoa.Nome_pessoa%TYPE) 
@@ -78,4 +79,7 @@ BEGIN
 	
 END setor_onde_trabalha;
 /
-
+--=================================
+--while loop
+--if elsif
+--case when
