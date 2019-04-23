@@ -9,8 +9,8 @@ WHERE Capacidade > (SELECT AVG(Capacidade)
 -- Ele lançará uma exceção caso o cursor não tiver sido manipulado corretamente.
 -- set server output on;
 DECLARE
-v_telefone Telefone_Pessoa.telefone%TYPE;
-v_CPF_Telefone Telefone_Pessoa.CPF_telefone%TYPE:=5267;
+v_telefone Telefone_Pessoa.telefone%TYPE,
+v_CPF_Telefone Telefone_Pessoa.CPF_telefone%TYPE:=5267,
 
 CURSOR c_telefone IS 
 SELECT telefone
