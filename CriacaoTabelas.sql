@@ -33,7 +33,7 @@ ADD (CONSTRAINT Pessoa_pk PRIMARY KEY (CPF));
 CREATE TABLE Funcionario(
 ID_Funcionario NUMBER,
 ID_Supervisor NUMBER,
-Salario DECIMAL (5,5), -- para evitar problemas com oracle live vamos deixar 5,5 a nivel bancário de minucia!
+Salario DECIMAL (6,2), -- para evitar problemas com oracle live vamos deixar 5,5 a nivel bancário de minucia!
 CONSTRAINT Funcionario_pk PRIMARY KEY (ID_Funcionario)
 );
 --é preciso alterar somente depois senao não roda no oracle live.
