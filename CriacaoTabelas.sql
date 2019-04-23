@@ -117,6 +117,9 @@ CONSTRAINT Snack_Bar_pk PRIMARY KEY (ID_Snack_Bar, CNPJ),
 CONSTRAINT Snack_Bar_fk FOREIGN KEY (CNPJ) REFERENCES Cinema (CNPJ)
 );
 
+CREATE SEQUENCE ID_Produto
+INCREMENT BY 1 START WITH 1;
+
 CREATE TABLE Produto ( --essa tabela só será criada se a Snack_Bar for criada, deve rodar tranquilo no SQL Plus
 ID_Produto NUMBER,
 ID_Snack_Bar NUMBER,
