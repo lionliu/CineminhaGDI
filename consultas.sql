@@ -65,3 +65,11 @@ WHERE P.Preco <= (
     SELECT AVG(Preco)
     FROM Produto
 );
+
+SELECT F.Nome_Filme
+FROM Filme F
+WHERE F.Faixa_Etaria >=
+ANY (
+    SELECT Faixa_Etaria
+    FROM Filme
+);
