@@ -33,7 +33,7 @@ ADD (CONSTRAINT Pessoa_pk PRIMARY KEY (CPF));
 CREATE TABLE Funcionario(
 ID_Funcionario NUMBER,
 ID_Supervisor NUMBER,
-Salario DECIMAL (4,4), -- para evitar problemas com oracle live vamos deixar 4.4
+Salario DECIMAL (5,5), -- para evitar problemas com oracle live vamos deixar 5,5 a nivel bancário de minucia!
 CONSTRAINT Funcionario_pk PRIMARY KEY (ID_Funcionario)
 );
 --é preciso alterar somente depois senao não roda no oracle live.
@@ -122,7 +122,7 @@ ID_Produto NUMBER,
 ID_Snack_Bar NUMBER,
 CNPJ_Snack_Bar NUMBER,
 Nome_Produto VARCHAR2(30) NOT NULL,
-Preco DECIMAL(3,3),
+Preco DECIMAL(4,4), --para evitar problemas com oracle live vamos deixar 5,5 a nivel bancário de minucia!
 CONSTRAINT Produto_pk PRIMARY KEY (ID_Produto, ID_Snack_Bar),
 CONSTRAINT Produto_fk FOREIGN KEY (ID_Snack_Bar, CNPJ_Snack_Bar) REFERENCES Snack_Bar (ID_Snack_Bar, CNPJ)
 );
