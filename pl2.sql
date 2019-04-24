@@ -36,16 +36,33 @@ END LOOP;
 END;
 /
 
--- Trigger de linha que printa qual o nome da pessoa que foi atualizada
-CREATE OR REPLACE TRIGGER nomePessoaAtualizada
-AFTER UPDATE ON Pessoa
+-- Trigger de linha que não deixa apagar Jesus
+CREATE OR REPLACE TRIGGER JesusNoCoracao
+BEFORE DELETE ON Pessoa
 FOR EACH ROW
 BEGIN
-    DBMS_OUTPUT.PUT_LINE(:NEW.Nome_Pessoa||' teve dados atualizados');
+    IF :OLD.Nome_Pessoa='Jesus' THEN
+        RAISE_APPLICATION_ERROR(-20011, 'Nao se pode deletar JESUS!');
+    END IF;
 END;
 /
 
 -- Teste do trigger de linha
-UPDATE Pessoa  
-SET Data_Nasc = to_date('23/02/1997', 'dd/mm/yyyy')
-WHERE Nome_Pessoa = 'Xuliano'; 
+DELETE FROM Pessoa
+WHERE Nome_Pessoa = 'Jesus';
+
+-- Trigger de Comando que informa quantas pessoas a tabela ainda possui depois que uma pessoa é apagada
+CREATE OR REPLACE TRIGGER qtDePessoas
+AFTER DELETE ON Pessoa
+DECLARE
+v_qtPessoa INTEGER;
+BEGIN
+SELECT COUNT(*) INTO v_qtPessoa
+FROM Pessoa;
+    DBMS_OUTPUT.PUT_LINE('Tabela Pessoa agora possui '|| v_qtPessoa || ' pessoa(s)');
+END;
+/
+
+-- Teste do trigger de comando
+DELETE FROM Pessoa
+WHERE Nome_Pessoa = 'SereiExcluido';
