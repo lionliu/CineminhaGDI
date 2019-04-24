@@ -68,8 +68,22 @@ DELETE FROM Pessoa
 WHERE Nome_Pessoa = 'SereiExcluido';
 
 -- Package cadastroCinema
+DECLARE
+CREATE OR REPLACE PACKAGE BODY CadastroCinema AS
 
-CREATE OR REPLACE CadastroCinema AS
+CREATE OR REPLACE PROCEDURE ARMAZENA_CINEMAS(p_CNPJ Cinema.CNPJ%TYPE,
+p_Numero_Salas Cinema.Numero_Salas%TYPE,
+p_Nome_Cinema Cinema.Nome_Cinema%TYPE) IS
+BEGIN
+     INSERT INTO Cinema (CNPJ,Numero_Salas,Nome_Cinema) VALUES (p_CNPJ,p_Numero_Salas,p_Nome_Cinema);
+END ARMAZENA_CINEMAS;
+
+CREATE OR REPLACE PROCEDURE REMOVE_CINEMA(p_CNPJ Cinema.CNPJ%TYPE) IS
+BEGIN
+    DELETE FROM Cinema WHERE CNPJ=p_CNPJ;
+    IF SQL%NOTFOUND THEN
+        RAISE_APPLICATION_ERROR(-20011, 'Não ha este cinema na lista');
+END REMOVE_CINEMA;
 
 END CadastroCinema;
 /
