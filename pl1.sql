@@ -7,7 +7,7 @@ TYPE TYPE_CINEMA IS RECORD(
 );
 cineminha TYPE_CINEMA;
 --=================================
---uso de estrutura tipo table + %rowtype
+--uso de estrutura tipo table + %rowtype + IF ELSIF + CASE WHEN
 DECLARE
 
 TYPE listaPessoas IS TABLE OF Pessoa%rowtype;
@@ -16,15 +16,26 @@ lista listaPessoas :=listaPessoas();
 
 BEGIN
 
-
     FOR HUMANO IN (
-        SELECT * FROM PESSOA P WHERE P.NOME_PESSOA  LIKE 'A%'
+        SELECT * FROM PESSOA P 
     ) LOOP
 
         lista.EXTEND;
-        lista(lista.LAST).nome_pessoa :=HUMANO.nome_pessoa;
-        lista(lista.LAST).cpf :=HUMANO.cpf;
-        lista(lista.LAST).Data_Nasc :=HUMANO.Data_Nasc;
+
+		IF HUMANO.CPF < 4000 THEN
+        	CASE HUMANO.NOME_PESSOA
+        	    WHEN 'Leao' THEN
+        	        lista(lista.LAST).nome_pessoa :='GATINHO';
+        	    ELSE
+			        lista(lista.LAST).nome_pessoa :=HUMANO.nome_pessoa;
+                END CASE;
+                lista(lista.LAST).cpf :=HUMANO.cpf;
+                lista(lista.LAST).Data_Nasc :=HUMANO.Data_Nasc;
+		ELSIF HUMANO.NOME_PESSOA LIKE 'Adiano%' THEN
+			lista(lista.LAST).nome_pessoa :='Vegeta';
+			lista(lista.LAST).cpf :=8001;
+        	lista(lista.LAST).Data_Nasc :=to_date('12/12/1212','dd/mm/yy');
+		END IF;
         
     END LOOP;
 
@@ -81,5 +92,3 @@ END setor_onde_trabalha;
 /
 --=================================
 --while loop
---if elsif
---case when
