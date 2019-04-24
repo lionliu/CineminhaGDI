@@ -66,3 +66,10 @@ END;
 -- Teste do trigger de comando
 DELETE FROM Pessoa
 WHERE Nome_Pessoa = 'SereiExcluido';
+
+-- Package cadastroCinema
+
+CREATE OR REPLACE CadastroCinema AS
+
+END CadastroCinema;
+/
