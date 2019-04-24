@@ -1,3 +1,4 @@
+--=================================
 --criação de tipo usando record 
 DECLARE
 TYPE TYPE_CINEMA IS RECORD(
@@ -72,7 +73,6 @@ BEGIN
 	WHERE P.Nome_Pessoa = nome_p;
 
 	IF nome_p IS NULL THEN 
-		dbms_output.put_line('pessoa nao cadastrada');
 		v_setor := 'inexistente';
 	ELSE
 		SELECT S.Nome_Setor INTO v_setor
@@ -82,7 +82,6 @@ BEGIN
 		AND PF.CPF = cpfPessoa;
 
 		IF v_setor IS NULL THEN
-			dbms_output.put_line('pessoa nao eh funcionaria');
 			v_setor := 'inexistente';
 		END IF;
 	END IF;
@@ -92,3 +91,17 @@ END setor_onde_trabalha;
 /
 --=================================
 --while loop
+DECLARE
+	TYPE FIBO IS TABLE OF NUMBER INDEX BY BINARY_INTEGER;
+	i INTEGER;
+	
+	MEMO FIBO := FIBO();
+BEGIN 
+	MEMO(0):=1;
+	MEMO(1):=1;
+	i:=2;
+	WHILE i<3000 LOOP
+	MEMO(i) := MEMO(i-1)+MEMO(i-2);
+	i:=i+1;
+	END LOOP;
+END;
