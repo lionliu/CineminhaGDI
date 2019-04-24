@@ -8,7 +8,7 @@ TYPE TYPE_CINEMA IS RECORD(
 );
 cineminha TYPE_CINEMA;
 --=================================
---uso de estrutura tipo table + %rowtype + IF ELSIF + CASE WHEN
+--uso de estrutura tipo table + %rowtype + IF ELSIF + CASE WHEN 
 DECLARE
 
 TYPE listaPessoas IS TABLE OF Pessoa%rowtype;
@@ -42,7 +42,7 @@ BEGIN
 
 END;
 --=================================
---create procedure
+--create procedure (adiciona um novo cinema no banco de dados)
 CREATE OR REPLACE PROCEDURE ARMAZENA_CINEMAS(v_CNPJ NUMBER,
 v_Numero_Salas NUMBER,
 v_Nome_Cinema VARCHAR2(30)) IS
@@ -51,7 +51,7 @@ BEGIN
 END ARMAZENA_CINEMAS;
 /
 --=================================
---bloco anonimo
+--bloco anonimo (utiliza procedure criado acima)
 BEGIN
 ARMAZENA_CINEMAS(0100,666,'aSSEMBLEIA DE sATAANAS');
 ARMAZENA_CINEMAS(0101,123,'UFC-INEMAS');
@@ -90,7 +90,7 @@ BEGIN
 END setor_onde_trabalha;
 /
 --=================================
---while loop
+--while loop (fibbonacci)
 DECLARE
 	TYPE FIBO IS TABLE OF NUMBER INDEX BY BINARY_INTEGER;
 	i INTEGER;
