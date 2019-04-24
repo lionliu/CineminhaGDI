@@ -43,11 +43,11 @@ BEGIN
 END;
 --=================================
 --create procedure (adiciona um novo cinema no banco de dados)
-CREATE OR REPLACE PROCEDURE ARMAZENA_CINEMAS(v_CNPJ NUMBER,
-v_Numero_Salas NUMBER,
-v_Nome_Cinema VARCHAR2(30)) IS
+CREATE OR REPLACE PROCEDURE ARMAZENA_CINEMAS(p_CNPJ NUMBER,
+p_Numero_Salas NUMBER,
+p_Nome_Cinema VARCHAR2(30)) IS
 BEGIN
-     INSERT INTO Cinema (CNPJ,Numero_Salas,Nome_Cinema) VALUES (v_CNPJ,v_Numero_Salas,v_Nome_Cinema);
+     INSERT INTO Cinema (CNPJ,Numero_Salas,Nome_Cinema) VALUES (p_CNPJ,p_Numero_Salas,p_Nome_Cinema);
 END ARMAZENA_CINEMAS;
 /
 --=================================
