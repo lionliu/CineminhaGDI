@@ -24,12 +24,12 @@ BEGIN
         lista.EXTEND;
 
 		IF HUMANO.CPF < 4000 THEN
-        	CASE HUMANO.NOME_PESSOA
-        	    WHEN 'Leao' THEN
-        	        lista(lista.LAST).nome_pessoa :='GATINHO';
-        	    ELSE
-			        lista(lista.LAST).nome_pessoa :=HUMANO.nome_pessoa;
-                END CASE;
+			CASE HUMANO.NOME_PESSOA
+			    WHEN 'Leao' THEN
+				lista(lista.LAST).nome_pessoa :='GATINHO';
+			    ELSE
+				lista(lista.LAST).nome_pessoa :=HUMANO.nome_pessoa;
+			END CASE;
                 lista(lista.LAST).cpf :=HUMANO.cpf;
                 lista(lista.LAST).Data_Nasc :=HUMANO.Data_Nasc;
 		ELSIF HUMANO.NOME_PESSOA LIKE 'Adiano%' THEN
