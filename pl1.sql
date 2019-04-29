@@ -35,7 +35,7 @@ BEGIN
 		ELSIF HUMANO.NOME_PESSOA LIKE 'Adiano%' THEN
 			lista(lista.LAST).nome_pessoa :='Vegeta';
 			lista(lista.LAST).cpf :=8001;
-        		lista(lista.LAST).Data_Nasc :=to_date('12/12/1212','dd/mm/yy');
+        		lista(lista.LAST).Data_Nasc :=to_date('12/12/1212','dd/mm/yyyy');
 		END IF;
         
     END LOOP;
