@@ -6,6 +6,7 @@ import java.sql.*;
 import java.util.Scanner;
 
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 public class JDBC {
 
     public static String url = "jdbc:oracle:thin:@oracle12c.cin.ufpe.br:1521:instance01";
@@ -24,11 +25,10 @@ public class JDBC {
             conexao = DriverManager.getConnection(url, user, senha);
             stmt = conexao.createStatement();
             //by zé
-            pstmt = conexao.prepareStatement("insert into IMAGE values(?)"); 
-            pstmt2 = conexao.prepareStatement("drop or create table IMAGE(img blob)");
-            pstmt2.execute();
-            insertImage();
-            //
+           // pstmt = conexao.prepareStatement("update PRODUTO set IMG = ? where ID_PRODUTO = 95"); 
+            //pstmt2 = conexao.prepareStatement("drop or create table IMAGE(img blob)");
+            //pstmt2.execute();
+            //insertImage("D:\\Users\\jgsp2\\Desktop\\gdi\\CineminhaGDI\\JavaDestroiBonoroCuck\\Marmita.jpg");
         }catch (ClassNotFoundException e){
             e.printStackTrace();
         } catch (SQLException e) {
@@ -37,8 +37,8 @@ public class JDBC {
 
     }
     //by zé
-    public static void insertImage() {
-    	File file = new File("./pipoca.jpg");
+    public static void insertImage(String namefile) {
+    	File file = new File(namefile);
     	InputStream inputImage = null;
 		try {
 			inputImage = new FileInputStream(file);
@@ -47,7 +47,8 @@ public class JDBC {
 			e1.printStackTrace();
 		}
     	try {
-			pstmt.setBinaryStream(2, inputImage, (int)(file.length()));
+			pstmt.setBinaryStream(1, inputImage, (int)(file.length()));
+			pstmt.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -58,20 +59,22 @@ public class JDBC {
     	Blob blob = null;
     	ImageIcon imageIcon=null;
 		try {
-			blob = resultado.getBlob(1);
+			resultado.next();
+			blob = resultado.getBlob("IMG");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
     	try {
 			imageIcon = new ImageIcon(blob.getBytes(1, (int)blob.length()));
+			JOptionPane.showMessageDialog(null, "Hello world", "Hello", JOptionPane.INFORMATION_MESSAGE, imageIcon);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return imageIcon;
     }
-    //
+    
     public static void closeConnection(){
         try {
             conexao.close();
@@ -83,6 +86,7 @@ public class JDBC {
     public static void selectBasico(String select){
         try {
             resultado = stmt.executeQuery(select);
+            //retrieveImage();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -141,6 +145,10 @@ public class JDBC {
     
 
     public static void main(String args[]){
+    	//DUAS LINHAS ABAIXO PRINTAM IMAGEM NA TELA
+    	//IDEALMENTE GERAR IMAGEM NOVA PEGANDO DO BANCO DE DADOS ATRAVEZ DE retrieveImage() e usar isso pra printar
+    	ImageIcon icon = new ImageIcon("D:\\Users\\jgsp2\\Desktop\\gdi\\CineminhaGDI\\JavaDestroiBonoroCuck\\Marmita.jpg");
+    	JOptionPane.showMessageDialog(null, "MARMITA VAZIA 10 REAIS", "marmita", JOptionPane.INFORMATION_MESSAGE, icon);
      Scanner leia = new Scanner(System.in);
         //Fazer um select basico:
 
