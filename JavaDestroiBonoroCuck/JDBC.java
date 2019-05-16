@@ -22,12 +22,8 @@ public class JDBC {
 	public static Statement stmt;
 	public static PreparedStatement pstmt, pstmt2;
 	public static ResultSet resultado;
-	public static String ID_produto = "1";
-	public static String ID_Barzinho = "2";
-	public static String CNPJ_Barzinho = "3";
-	public static String Nome_Produto = "4";
-	public static String Preco = "5";
 	
+	public static String[] colunas;
 	public static void testeCodigoAdriano() {
 		
 		Blob blob = null;
@@ -57,8 +53,8 @@ public class JDBC {
 		g2.drawImage(img, 0, 0, null);
 		g2.dispose();
 		try {//COLOCAR UMA PATH QUE SEJA ACESSIVEL
-			ImageIO.write(bi, "jpg", new File("C:\\Users\\gtsa\\Desktop\\CineminhaGDI\\JavaDestroiBonoroCuck\\img.jpg"));
-			ImageIcon icon2 = new ImageIcon("C:\\Users\\gtsa\\Desktop\\CineminhaGDI\\JavaDestroiBonoroCuck\\img.jpg");
+			ImageIO.write(bi, "jpg", new File("D:\\Users\\jgsp2\\Desktop\\gdi\\CineminhaGDI\\JavaDestroiBonoroCuck\\img.jpg"));
+			ImageIcon icon2 = new ImageIcon("D:\\Users\\jgsp2\\Desktop\\gdi\\CineminhaGDI\\JavaDestroiBonoroCuck\\img.jpg");
 ;			JOptionPane.showMessageDialog(null, "Welcome!", "This is the Bug Plug Flurry Land!", JOptionPane.INFORMATION_MESSAGE, icon2);
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -70,7 +66,7 @@ public class JDBC {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			conexao = DriverManager.getConnection(url, user, senha);
 			stmt = conexao.createStatement();
-			// pstmt = conexao.prepareStatement("update PRODUTO set IMG = ? where ID_PRODUTO = 95"); 
+			//pstmt = conexao.prepareStatement("update PRODUTO set IMG = ? where ID_PRODUTO = 95"); 
 			//pstmt2 = conexao.prepareStatement("drop or create table IMAGE(img blob)");
 			//pstmt2.execute();
 			//insertImage("D:\\Users\\jgsp2\\Desktop\\gdi\\CineminhaGDI\\JavaDestroiBonoroCuck\\Marmita.jpg");
@@ -100,43 +96,44 @@ public class JDBC {
 		}
 	}
 
-	public static ImageIcon retrieveImage(String consultaEssqL) {//deveria pegar e imprimir imagem
+	public static void retrieveImage(String consultaEssqL) {//deveria pegar e imprimir imagem
 		Blob blob = null;
 		ImageIcon imageIcon=null;
 		selectBasico("select count(*) from ("+consultaEssqL+")");
+		String text = "";
 		int qtt = 0;
 		try {
 			resultado.next();
-			qtt = Integer.parseInt(resultado.getString(1));
-			System.out.println(qtt);
+			qtt = Integer.parseInt(resultado.getString(1));//quantidade de linhas
 		}catch (SQLException a) {
 			a.printStackTrace();
 		}
-		selectBasico(consultaEssqL);
+		
+		selectBasico(consultaEssqL);//atualiza resultado
+		int DIO = gambiarra(consultaEssqL);//peg quantidade de colunas e atualiza colunas[]
+		
 		for(int i = 0; i<qtt;i++) {
 			try {
-				int DIO = gambiarra(consultaEssqL);
-				//String arr[6] = gambiarra2(consultaEssqL);
 				resultado.next();
 				blob = resultado.getBlob("IMG");
-				ID_produto =  "ID: " + resultado.getString(1);
-				ID_Barzinho = "\nID_Bar : " + resultado.getString(2);
-				CNPJ_Barzinho = "\nCNPJ: " + resultado.getString(3);
-				Nome_Produto = "\nProduto: " + resultado.getString(4);
-				Preco = "\nR$: "+resultado.getString(5)+ "\n";
+				text="";
+				for(int j = 1; j<= colunas.length;j++) {//pra cada coluna
+					text += colunas[j-1] + ": " + resultado.getString(j) + "\n";//atualiza texto
+				}
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
+			
 	
 			try {
 				imageIcon = new ImageIcon(blob.getBytes(1, (int)blob.length()));
-				JOptionPane.showMessageDialog(null,ID_produto + ID_Barzinho +CNPJ_Barzinho+
-				Nome_Produto + Preco, "Tabela Produtos", JOptionPane.INFORMATION_MESSAGE, imageIcon);
+				JOptionPane.showMessageDialog(null,text, "Tabela Produtos", JOptionPane.INFORMATION_MESSAGE, imageIcon);
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 		}
-		return imageIcon;
+		
+		
 		
 	}
 
@@ -159,14 +156,30 @@ public class JDBC {
 	}
 
 	public static void ImprimirResultado(int quantidadeColunas){
-		while(true){
+		String text = "";
+		int qtt = 0;
+		try {
+			resultado.next();
+			qtt = Integer.parseInt(resultado.getString(1));//quantidade de linhas
+		}catch (SQLException a) {
+			a.printStackTrace();
+		}
+		for(int i = 0; i<qtt;i++){
 			try {
-				if (resultado.next()){
-					for(int i = 1; i<= quantidadeColunas;i++) {
-						System.out.print(resultado.getString(i)+"\t\t");
+				if (resultado.next()){//pra cada linha
+					text="";
+					for(int j = 1; j<= quantidadeColunas;j++) {//pra cada coluna
+						text += colunas[j-1] + ": " + resultado.getString(j).toUpperCase() + "\n";//atualiza texto
 					}
-					System.out.println();
-
+					
+					try {
+						Blob blob = resultado.getBlob("IMG");
+						ImageIcon imageIcon = new ImageIcon(blob.getBytes(1, (int)blob.length()));
+						JOptionPane.showMessageDialog(null,text, "Tabela Produtos", JOptionPane.INFORMATION_MESSAGE, imageIcon);
+					} catch (SQLException e) {
+						e.printStackTrace();
+					}
+					
 				}else{
 					break;
 				}
@@ -183,8 +196,8 @@ public class JDBC {
 		if(consultaEssqL.contains("*")) {
 			if(consultaEssqL.contains(" produto")) {
 				//TENTATIVA DE PEGAR IMAGEM AQUI
-				//retrieveImage();//se descomentar isso ele buga
-				return 6;
+				colunas = new String[]{"ID_produto","ID_Barzinho","CNPJ_Barzinho","Nome_Produto","Preco"};
+				return 5;
 			}
 		}
 
@@ -193,7 +206,7 @@ public class JDBC {
 
 		aux = aux.split(" from")[0];//pega tudo antes do from e depois do select
 		//System.out.println("entre o select e o from tem "+aux);
-
+		
 		int contador=0;
 
 		for(int i=0;i<aux.length(); i++) {
@@ -202,6 +215,15 @@ public class JDBC {
 			}
 
 		}
+		colunas = aux.split(",");
+		
+		//teste funcionou
+		for(int i=0;i<colunas.length; i++) {
+			colunas[i] = colunas[i].trim();
+			System.err.println(colunas[i]);
+		}
+		
+		
 		return contador+1;
 	}
 
@@ -215,7 +237,11 @@ public class JDBC {
 
 		//Abrir a conexao:
 		createConnection();
-
+		
+		//teste da criacao do array colunas na gambiarra
+		//int q = gambiarra("select id_produto, nome_produto from produto");
+		//passou no teste
+		
 		testeCodigoAdriano();//Só funciona se tiver isso...
 
 		System.out.println("Digite quantas consultas gostaria de realizar");
@@ -229,7 +255,7 @@ public class JDBC {
 
 			//Fazer um select basico:
 			//pega resultado
-			retrieveImage(consultaEssqL);
+			retrieveImage(consultaEssqL);//faz tudo
 			//testeCodigoAdriano();
 
 			//pega quantidade de colunas no resultado
