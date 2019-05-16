@@ -21,27 +21,27 @@ public class JDBC {
 	public static Connection conexao;
 	public static Statement stmt;
 	public static PreparedStatement pstmt, pstmt2;
-	public static ResultSet resultado, resultadoimg;
+	public static ResultSet resultado;
 	public static String ID_produto = "1";
 	public static String ID_Barzinho = "2";
 	public static String CNPJ_Barzinho = "3";
 	public static String Nome_Produto = "4";
 	public static String Preco = "5";
 	
-	public static void testeCodigoAdriano(String consulta) {
+	public static void testeCodigoAdriano() {
 		
 		Blob blob = null;
 		ImageIcon icon=null;
-		selectBasicoimg(consulta);
+		selectBasico("select img from produto where id_produto = 94");
 		
 		try {//pega resultado
-			resultadoimg.next();
+			resultado.next();
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		try {//pega blob da imagem
-			blob = resultadoimg.getBlob("IMG");
+			blob = resultado.getBlob("IMG");
 			icon = new ImageIcon(blob.getBytes(1, (int)blob.length()));
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
@@ -57,18 +57,10 @@ public class JDBC {
 		g2.drawImage(img, 0, 0, null);
 		g2.dispose();
 		try {//COLOCAR UMA PATH QUE SEJA ACESSIVEL
-			ImageIO.write(bi, "jpg", new File("C:\\Users\\jgsp2\\Desktop\\gdi\\CineminhaGDI\\JavaDestroiBonoroCuck\\img.jpg"));
-			ImageIcon icon2 = new ImageIcon("C:\\Users\\jgsp2\\Desktop\\gdi\\CineminhaGDI\\JavaDestroiBonoroCuck\\img.jpg");
-;			JOptionPane.showMessageDialog(null, "", "Tabela Produto", JOptionPane.INFORMATION_MESSAGE, icon2);
+			ImageIO.write(bi, "jpg", new File("C:\\Users\\gtsa\\Desktop\\CineminhaGDI\\JavaDestroiBonoroCuck\\img.jpg"));
+			ImageIcon icon2 = new ImageIcon("C:\\Users\\gtsa\\Desktop\\CineminhaGDI\\JavaDestroiBonoroCuck\\img.jpg");
+;			JOptionPane.showMessageDialog(null, "Welcome!", "This is the Bug Plug Flurry Land!", JOptionPane.INFORMATION_MESSAGE, icon2);
 		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-	private static void selectBasicoimg(String consulta) {
-		try {
-			resultadoimg = stmt.executeQuery(consulta);
-
-		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
@@ -193,7 +185,7 @@ public class JDBC {
 
 		}
 		//TENTATIVA DE PEGAR IMAGEM AQUI
-		//if(aux.contains("img")) retrieveImage();//nao faz oq queremos ainda
+		if(aux.contains("img")) retrieveImage();//nao faz oq queremos ainda
 
 		return contador+1;
 	}
@@ -208,8 +200,8 @@ public class JDBC {
 
 		//Abrir a conexao:
 		createConnection();
-		String cons = "select img from produto where id_produto = 93";
-		testeCodigoAdriano(cons);
+
+		testeCodigoAdriano();//Só funciona se tiver isso...
 
 		System.out.println("Digite quantas consultas gostaria de realizar");
 		int aux = leia.nextInt();
@@ -219,13 +211,11 @@ public class JDBC {
 		for(int i = 0; i<aux;i++) {
 			System.out.println("Escreva a consulta em formato SELECT FROM WHERE em uma única linha.");
 			String consultaEssqL = leia.nextLine();
-			//System.out.println(consultaEssqL);
-			testeCodigoAdriano(consultaEssqL.toString());
 
 			//Fazer um select basico:
 			//pega resultado
-			
 			selectBasico(consultaEssqL);
+			//testeCodigoAdriano();
 
 			//pega quantidade de colunas no resultado
 			int quantidade = gambiarra(consultaEssqL);
