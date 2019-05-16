@@ -103,26 +103,38 @@ public class JDBC {
 	public static ImageIcon retrieveImage(String consultaEssqL) {//deveria pegar e imprimir imagem
 		Blob blob = null;
 		ImageIcon imageIcon=null;
-		selectBasico(consultaEssqL);
-		
+		selectBasico("select count(*) from ("+consultaEssqL+")");
+		int qtt = 0;
 		try {
 			resultado.next();
-			blob = resultado.getBlob("IMG");
-			ID_produto = resultado.getString(1);
-			ID_Barzinho = resultado.getString(2);
-			CNPJ_Barzinho = resultado.getString(3);
-			Nome_Produto = resultado.getString(4);
-			Preco = resultado.getString(5);
-		} catch (SQLException e) {
-			e.printStackTrace();
+			qtt = Integer.parseInt(resultado.getString(1));
+			System.out.println(qtt);
+		}catch (SQLException a) {
+			a.printStackTrace();
 		}
-
-		try {
-			imageIcon = new ImageIcon(blob.getBytes(1, (int)blob.length()));
-			JOptionPane.showMessageDialog(null, "ID: "+ ID_produto +"\nID_Bar : "+ID_Barzinho +"\nCNPJ: "+CNPJ_Barzinho+"\nProduto: "+
-			Nome_Produto+"\nR$: "+Preco+"\n", "Tabela Produto", JOptionPane.INFORMATION_MESSAGE, imageIcon);
-		} catch (SQLException e) {
-			e.printStackTrace();
+		selectBasico(consultaEssqL);
+		for(int i = 0; i<qtt;i++) {
+			try {
+				int DIO = gambiarra(consultaEssqL);
+				//String arr[6] = gambiarra2(consultaEssqL);
+				resultado.next();
+				blob = resultado.getBlob("IMG");
+				ID_produto =  "ID: " + resultado.getString(1);
+				ID_Barzinho = "\nID_Bar : " + resultado.getString(2);
+				CNPJ_Barzinho = "\nCNPJ: " + resultado.getString(3);
+				Nome_Produto = "\nProduto: " + resultado.getString(4);
+				Preco = "\nR$: "+resultado.getString(5)+ "\n";
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+	
+			try {
+				imageIcon = new ImageIcon(blob.getBytes(1, (int)blob.length()));
+				JOptionPane.showMessageDialog(null,ID_produto + ID_Barzinho +CNPJ_Barzinho+
+				Nome_Produto + Preco, "Tabela Produtos", JOptionPane.INFORMATION_MESSAGE, imageIcon);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 		return imageIcon;
 		
@@ -173,8 +185,7 @@ public class JDBC {
 				//TENTATIVA DE PEGAR IMAGEM AQUI
 				//retrieveImage();//se descomentar isso ele buga
 				return 6;
-			}else if(consultaEssqL.contains(" pessoa")) return 4;
-			//colocar outras tabelas se necessário
+			}
 		}
 
 		String aux = consultaEssqL.split("select ")[1];//pega tudo depois do select
@@ -222,10 +233,10 @@ public class JDBC {
 			//testeCodigoAdriano();
 
 			//pega quantidade de colunas no resultado
-			int quantidade = gambiarra(consultaEssqL);
+			//int quantidade = gambiarra(consultaEssqL);
 
-			//Imprimir resultado
-			ImprimirResultado(quantidade);
+			//Imprimir resultado NO CONSOLE
+			//ImprimirResultado(quantidade);
 
 		}
 		//Fechar a conexao;
