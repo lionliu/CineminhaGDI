@@ -100,13 +100,19 @@ public class JDBC {
 		}
 	}
 
-	public static ImageIcon retrieveImage() {//deveria pegar e imprimir imagem
+	public static ImageIcon retrieveImage(String consultaEssqL) {//deveria pegar e imprimir imagem
 		Blob blob = null;
 		ImageIcon imageIcon=null;
-
+		selectBasico(consultaEssqL);
+		
 		try {
 			resultado.next();
 			blob = resultado.getBlob("IMG");
+			ID_produto = resultado.getString(1);
+			ID_Barzinho = resultado.getString(2);
+			CNPJ_Barzinho = resultado.getString(3);
+			Nome_Produto = resultado.getString(4);
+			Preco = resultado.getString(5);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -119,6 +125,7 @@ public class JDBC {
 			e.printStackTrace();
 		}
 		return imageIcon;
+		
 	}
 
 	public static void closeConnection(){
@@ -184,9 +191,6 @@ public class JDBC {
 			}
 
 		}
-		//TENTATIVA DE PEGAR IMAGEM AQUI
-		if(aux.contains("img")) retrieveImage();//nao faz oq queremos ainda
-
 		return contador+1;
 	}
 
@@ -214,13 +218,13 @@ public class JDBC {
 
 			//Fazer um select basico:
 			//pega resultado
-			selectBasico(consultaEssqL);
+			retrieveImage(consultaEssqL);
 			//testeCodigoAdriano();
 
 			//pega quantidade de colunas no resultado
 			int quantidade = gambiarra(consultaEssqL);
 
-			//Imprimir resultado:
+			//Imprimir resultado
 			ImprimirResultado(quantidade);
 
 		}
@@ -230,3 +234,4 @@ public class JDBC {
 	}
 }
 //Tem que baixar oracle jar no site da oracle
+
