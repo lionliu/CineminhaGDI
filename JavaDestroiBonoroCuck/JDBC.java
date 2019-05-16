@@ -1,10 +1,15 @@
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
 import java.sql.*;
 import java.util.Scanner;
 
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 public class JDBC {
@@ -18,6 +23,41 @@ public class JDBC {
 	public static PreparedStatement pstmt, pstmt2;
 	public static ResultSet resultado;
 
+	
+	public static void testeCodigoAdriano() {
+		
+		Blob blob = null;
+		ImageIcon icon=null;
+		selectBasico("select img from produto where id_produto = 92");
+		
+		try {//pega resultado
+			resultado.next();
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		try {//pega blob da imagem
+			blob = resultado.getBlob("IMG");
+			icon = new ImageIcon(blob.getBytes(1, (int)blob.length()));
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		
+		Image img = icon.getImage();
+
+		BufferedImage bi = new BufferedImage(img.getWidth(null),img.getHeight(null),BufferedImage.TYPE_INT_ARGB);
+
+		Graphics2D g2 = bi.createGraphics();
+		g2.drawImage(img, 0, 0, null);
+		g2.dispose();
+		try {
+			ImageIO.write(bi, "jpg", new File("img.jpg"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 	public static void createConnection(){
 
 		try{
@@ -153,6 +193,8 @@ public class JDBC {
 
 		//Abrir a conexao:
 		createConnection();
+
+		//testeCodigoAdriano();
 
 		System.out.println("Digite quantas consultas gostaria de realizar");
 		int aux = leia.nextInt();
