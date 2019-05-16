@@ -22,13 +22,17 @@ public class JDBC {
 	public static Statement stmt;
 	public static PreparedStatement pstmt, pstmt2;
 	public static ResultSet resultado;
-
+	public static String ID_produto = "1";
+	public static String ID_Barzinho = "2";
+	public static String CNPJ_Barzinho = "3";
+	public static String Nome_Produto = "4";
+	public static String Preco = "5";
 	
 	public static void testeCodigoAdriano() {
 		
 		Blob blob = null;
 		ImageIcon icon=null;
-		selectBasico("select img from produto where id_produto = 92");
+		selectBasico("select img from produto where id_produto = 94");
 		
 		try {//pega resultado
 			resultado.next();
@@ -52,8 +56,10 @@ public class JDBC {
 		Graphics2D g2 = bi.createGraphics();
 		g2.drawImage(img, 0, 0, null);
 		g2.dispose();
-		try {
-			ImageIO.write(bi, "jpg", new File("img.jpg"));
+		try {//COLOCAR UMA PATH QUE SEJA ACESSIVEL
+			ImageIO.write(bi, "jpg", new File("C:\\Users\\jgsp2\\Desktop\\gdi\\CineminhaGDI\\JavaDestroiBonoroCuck\\img.jpg"));
+			ImageIcon icon2 = new ImageIcon("C:\\Users\\jgsp2\\Desktop\\gdi\\CineminhaGDI\\JavaDestroiBonoroCuck\\img.jpg");
+;			JOptionPane.showMessageDialog(null, "", "Tabela Produto", JOptionPane.INFORMATION_MESSAGE, icon2);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -107,7 +113,8 @@ public class JDBC {
 
 		try {
 			imageIcon = new ImageIcon(blob.getBytes(1, (int)blob.length()));
-			JOptionPane.showMessageDialog(null, "Hello world", "Hello", JOptionPane.INFORMATION_MESSAGE, imageIcon);
+			JOptionPane.showMessageDialog(null, "ID: "+ ID_produto +"\nID_Bar : "+ID_Barzinho +"\nCNPJ: "+CNPJ_Barzinho+"\nProduto: "+
+			Nome_Produto+"\nR$: "+Preco+"\n", "Tabela Produto", JOptionPane.INFORMATION_MESSAGE, imageIcon);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -158,8 +165,8 @@ public class JDBC {
 			if(consultaEssqL.contains(" produto")) {
 				//TENTATIVA DE PEGAR IMAGEM AQUI
 				//retrieveImage();//se descomentar isso ele buga
-				return 5;
-			}else if(consultaEssqL.contains(" pessoa")) return 3;
+				return 6;
+			}else if(consultaEssqL.contains(" pessoa")) return 4;
 			//colocar outras tabelas se necessário
 		}
 
@@ -194,7 +201,7 @@ public class JDBC {
 		//Abrir a conexao:
 		createConnection();
 
-		//testeCodigoAdriano();
+		testeCodigoAdriano();
 
 		System.out.println("Digite quantas consultas gostaria de realizar");
 		int aux = leia.nextInt();
