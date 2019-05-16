@@ -21,27 +21,27 @@ public class JDBC {
 	public static Connection conexao;
 	public static Statement stmt;
 	public static PreparedStatement pstmt, pstmt2;
-	public static ResultSet resultado;
+	public static ResultSet resultado, resultadoimg;
 	public static String ID_produto = "1";
 	public static String ID_Barzinho = "2";
 	public static String CNPJ_Barzinho = "3";
 	public static String Nome_Produto = "4";
 	public static String Preco = "5";
 	
-	public static void testeCodigoAdriano() {
+	public static void testeCodigoAdriano(String consulta) {
 		
 		Blob blob = null;
 		ImageIcon icon=null;
-		selectBasico("select img from produto where id_produto = 94");
+		selectBasicoimg(consulta);
 		
 		try {//pega resultado
-			resultado.next();
+			resultadoimg.next();
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		try {//pega blob da imagem
-			blob = resultado.getBlob("IMG");
+			blob = resultadoimg.getBlob("IMG");
 			icon = new ImageIcon(blob.getBytes(1, (int)blob.length()));
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
@@ -61,6 +61,14 @@ public class JDBC {
 			ImageIcon icon2 = new ImageIcon("C:\\Users\\jgsp2\\Desktop\\gdi\\CineminhaGDI\\JavaDestroiBonoroCuck\\img.jpg");
 ;			JOptionPane.showMessageDialog(null, "", "Tabela Produto", JOptionPane.INFORMATION_MESSAGE, icon2);
 		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	private static void selectBasicoimg(String consulta) {
+		try {
+			resultadoimg = stmt.executeQuery(consulta);
+
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
@@ -185,7 +193,7 @@ public class JDBC {
 
 		}
 		//TENTATIVA DE PEGAR IMAGEM AQUI
-		if(aux.contains("img")) retrieveImage();//nao faz oq queremos ainda
+		//if(aux.contains("img")) retrieveImage();//nao faz oq queremos ainda
 
 		return contador+1;
 	}
@@ -200,8 +208,8 @@ public class JDBC {
 
 		//Abrir a conexao:
 		createConnection();
-
-		testeCodigoAdriano();
+		String cons = "select img from produto where id_produto = 93";
+		testeCodigoAdriano(cons);
 
 		System.out.println("Digite quantas consultas gostaria de realizar");
 		int aux = leia.nextInt();
@@ -211,10 +219,12 @@ public class JDBC {
 		for(int i = 0; i<aux;i++) {
 			System.out.println("Escreva a consulta em formato SELECT FROM WHERE em uma única linha.");
 			String consultaEssqL = leia.nextLine();
-
+			//System.out.println(consultaEssqL);
+			testeCodigoAdriano(consultaEssqL.toString());
 
 			//Fazer um select basico:
 			//pega resultado
+			
 			selectBasico(consultaEssqL);
 
 			//pega quantidade de colunas no resultado
