@@ -259,7 +259,7 @@ public class JDBC {
 		//leia.nextLine();
 		//Fazer um select:
 		for(int i = 0; i<aux;i++) {
-			if(i == 0) JOptionPane.showMessageDialog(null,"EX: [SELECT * FROM PRODUTO WHERE ID_PRODUTO = 90]");	
+			if(i == 0) JOptionPane.showMessageDialog(null,"EX: [SELECT * FROM PRODUTO WHERE ID_PRODUTO = 90]\nCaso queira colunas específicas faça:\nEX:[SELECT IMG, SUASCOLUNAS FROM TABELA [CONDICAO]]");	
 			
 			String consultaEssqL1 = JOptionPane.showInputDialog("Escreva a consulta em formato SELECT FROM WHERE em uma única linha");
 			//System.out.println("Escreva a consulta em formato SELECT FROM WHERE em uma única linha.");
