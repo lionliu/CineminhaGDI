@@ -158,7 +158,7 @@ END;
 
 
 
---Criacao de TABELAS
+--Criacao de TABELAS --sendo feito no criacaoTabelasAUXZé
 
 CREATE TABLE TB_PESSOA OF TP_PESSOA(
     CPF PRIMARY KEY,
