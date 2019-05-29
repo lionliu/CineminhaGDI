@@ -7,7 +7,7 @@ INSERT INTO TB_PESSOA VALUES (
     )
 );
 INSERT INTO TB_FILME VALUES(
-    TP_FILM(
+    TP_FILME(
         3001,
         16,
         to_date('28/05/2019','dd/mm/yyyy'),
