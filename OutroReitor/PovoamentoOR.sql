@@ -52,3 +52,23 @@ INSERT INTO TB_CINEMA VALUES(
     )
 );
 
+INSERT INTO TB_SNACK_BAR VALUES(
+    TP_SNACK_BAR(
+        0006,
+        (SELECT REF(C) FROM TB_CINEMA C 
+        WHERE CNPJ=8971),
+        timestamp '2019-04-23 8:00:00',
+        timestamp '2019-04-23 21:00:00'
+    )
+);
+
+INSERT INTO TB_SNACK_BAR VALUES(
+    TP_SNACK_BAR(
+        1002,
+        (SELECT REF(C) FROM TB_CINEMA C 
+        WHERE CNPJ=1001),
+        timestamp '2019-04-23 6:00:00',
+        timestamp '2019-04-23 23:00:00'
+    )
+);
+
