@@ -21,3 +21,34 @@ INSERT INTO TB_FILME VALUES(
             )
     )
 );
+
+INSERT INTO TB_CINEMA VALUES(
+    TP_CINEMA(
+        8971,
+        1,
+        'Assembleia de Deus',
+        TP_ENDERECO(
+            4171,
+            'Da Paz',
+            'Ceu',
+            8969,
+            'Nuvem 2'
+        )
+    )
+);
+
+INSERT INTO TB_CINEMA VALUES(
+    TP_CINEMA(
+        1001,
+        12,
+        'Disney',
+        TP_ENDERECO(
+            9821,
+            'Paranaue',
+            'Recife',
+            697,
+            'Paranaua'
+        )
+    )
+);
+
