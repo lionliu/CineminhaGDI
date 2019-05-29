@@ -72,3 +72,52 @@ INSERT INTO TB_SNACK_BAR VALUES(
     )
 );
 
+INSERT INTO TB_PRODUTO VALUES(
+    TP_PRODUTO(
+        50,
+        (SELECT REF(SB) FROM TB_SNACK_BAR SB
+        WHERE ID_SNACK_BAR=1002),
+        'Pipoca',
+        56.99
+    )
+);
+
+INSERT INTO TB_PRODUTO VALUES(
+    TP_PRODUTO(
+        51,
+        (SELECT REF(SB) FROM TB_SNACK_BAR SB
+        WHERE ID_SNACK_BAR=1002),
+        'Lion Whey Bar',
+        11.99
+    )
+);
+
+INSERT INTO TB_PRODUTO VALUES(
+    TP_PRODUTO(
+        52,
+        (SELECT REF(SB) FROM TB_SNACK_BAR SB
+        WHERE ID_SNACK_BAR=1002),
+        'Texero Acai',
+        6.99
+    )
+);
+
+INSERT INTO TB_PRODUTO VALUES(
+    TP_PRODUTO(
+        53,
+        (SELECT REF(SB) FROM TB_SNACK_BAR SB
+        WHERE ID_SNACK_BAR=1002),
+        'Jose Little Marmita',
+        9.99
+    )
+);
+
+INSERT INTO TB_PRODUTO VALUES(
+    TP_PRODUTO(
+        54,
+        (SELECT REF(SB) FROM TB_SNACK_BAR SB
+        WHERE ID_SNACK_BAR=1002),
+        'Adiano Empty Bottle of Water',
+        0.99
+    )
+);
