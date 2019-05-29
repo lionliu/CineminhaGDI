@@ -73,26 +73,26 @@ CREATE OR REPLACE TYPE TP_SETOR AS OBJECT(
 );
 /
 CREATE OR REPLACE TYPE TP_SETOR_FUNC AS OBJECT( --RELACAO SETOR-FUNC
-    ID_Setor NUMBER, --refers tp_setor
-    ID_Funcionario NUMBER, --refers tp_funcionario
+    SETOR REF TP_SETOR, --refers tp_setor
+    FUNCIONARIO REF TP_FUNCIONARIO, --refers tp_funcionario
 );
 /
 CREATE OR REPLACE TYPE TP_TRABALHA AS OBJECT(
-    CNPJ_Trabalha NUMBER, --refers TP_CINEMA
-    ID_Funcionario NUMBER --refers TP_FUNCIONARIO
+    CINEMA REF TP_CINEMA, --refers TP_CINEMA
+    FUNCIONARIO REF TP_FUNCIONARIO --refers TP_FUNCIONARIO
 );
 /
 CREATE OR REPLACE TYPE TP_SNACK_BAR AS OBJECT(
     ID_Snack_Bar NUMBER,
-    CNPJ NUMBER, --refers TP_CINEMA
+    CINEMA REF TP_CINEMA, --refers TP_CINEMA
     Horario_Abre TIMESTAMP, --no oracle live time nao é um tipo de dado caso forem fazer testes modificar.
     Horario_Fecha TIMESTAMP, -- pode colocar timestamp pra rodar... mas ai esse tipo de dado tem a data + hora :/
 );
 /
 CREATE OR REPLACE TYPE TP_PRODUTO AS OBJECT(
     ID_Produto NUMBER,
-    ID_Snack_Bar NUMBER, --refers TP_SNACK_BAR
-    CNPJ_Snack_Bar NUMBER, --refers TP_SNACK_BAR
+    --ID_Snack_Bar NUMBER, --refers TP_SNACK_BAR
+    SNACK_BAR REF TP_SNACK_BAR, --refers TP_SNACK_BAR
     Nome_Produto VARCHAR2(30) /*NOT NULL*/,
     Preco DECIMAL(6,2),
     MEMBER PROCEDURE alteraPreco(SELF TP_PRODUTO)
@@ -122,28 +122,28 @@ CREATE OR REPLACE TYPE TP_FILM AS OBJECT(
 ); 
 /
 CREATE OR REPLACE TYPE TP_FILME_SALA AS OBJECT(
-    ID_FILME NUMBER, --refers TP_FILME
-    ID_SALA NUMBER --refers TP_SALA
+    FILME REF TP_FILME, --refers TP_FILME
+    SALA REF TP_SALA --refers TP_SALA
 );
 /
 
 CREATE OR REPLACE TYPE TP_INGRESSO AS OBJECT(
     ID_Ingresso NUMBER,
-    ID_Filme NUMBER, --refers TP_FILME
+    FILME REF TP_FILME, --refers TP_FILME
     Preco_Ingresso DECIMAL(4, 2), --maior que 50c
     Horario TIMESTAMP
 );
 /
 CREATE OR REPLACE TYPE TP_VENDE_INGRESSO AS OBJECT(
-    ID_Ingresso NUMBER, --refers TP_INGRESSO
-    CPF NUMBER, --refers TP_PESSOA
-    ID_FUNCIONARIO NUMBER --refers TP_FUNCIONARIO
+    INGRESSO REF TP_INGRESSO, --refers TP_INGRESSO
+    PESSOA REF TP_PESSOA, --refers TP_PESSOA
+    FUNCIONARIO REF TP_FUNCIONARIO --refers TP_FUNCIONARIO
 );
 /
 CREATE OR REPLACE TYPE TP_EXIBE AS OBJECT(
-    ID_SALA NUMBER, --refers TP_SALA
-    ID_FILME NUMBER, --refers TP_FILME
-    CPF NUMBER --refers TP_PESSOA
+    SALA REF TP_SALA, --refers TP_SALA
+    FILME REF TP_FILME, --refers TP_FILME
+    PESSOA REF TP_PESSOA --refers TP_PESSOA
 );
 /
 CREATE OR REPLACE TYPE BODY TP_PRODUTO IS
