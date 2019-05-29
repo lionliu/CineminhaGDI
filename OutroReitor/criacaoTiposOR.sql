@@ -86,7 +86,7 @@ CREATE OR REPLACE TYPE TP_SNACK_BAR AS OBJECT(
     ID_Snack_Bar NUMBER,
     CINEMA REF TP_CINEMA, --refers TP_CINEMA
     Horario_Abre TIMESTAMP, --no oracle live time nao é um tipo de dado caso forem fazer testes modificar.
-    Horario_Fecha TIMESTAMP, -- pode colocar timestamp pra rodar... mas ai esse tipo de dado tem a data + hora :/
+    Horario_Fecha TIMESTAMP -- pode colocar timestamp pra rodar... mas ai esse tipo de dado tem a data + hora :/
 );
 /
 CREATE OR REPLACE TYPE TP_PRODUTO AS OBJECT(
