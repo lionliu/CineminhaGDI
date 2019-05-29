@@ -167,15 +167,3 @@ END;
 
 
 --Criacao de TABELAS --sendo feito no criacaoTabelasAUXZé
-
-CREATE TABLE TB_PESSOA OF TP_PESSOA(
-    CPF PRIMARY KEY,
-    NOME_PESSOA NOT NULL
-);
-/
-CREATE TABLE TB_FILME OF TP_FILM( 
-    ID_FILME PRIMARY KEY, 
-    Diretor NOT NULL, 
-    Nome_Filme NOT NULL 
-)NESTED TABLE Atores STORE AS TB_ATORES;
-/
