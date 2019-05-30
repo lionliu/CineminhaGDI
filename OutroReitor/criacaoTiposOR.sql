@@ -103,7 +103,8 @@ CREATE OR REPLACE TYPE TP_PRODUTO AS OBJECT(
 /
 CREATE OR REPLACE TYPE TP_SALA AS OBJECT(
     ID_SALA NUMBER,
-    CAPACIDADE NUMBER
+    CAPACIDADE NUMBER  --,
+    --FINAL MAP MEMBER FUNCTION comparaCapacidade RETURN NUMBER
 );
 /
 CREATE OR REPLACE TYPE TP_ATOR AS OBJECT( 
@@ -167,6 +168,17 @@ END;
 END;
 /
 
+
+--CREATE OR REPLACE TYPE BODY TP_SALA AS
+--FINAL MAP MEMBER FUNCTION comparaCapacidade RETURN
+--NUMBER IS
+--p NUMBER := CAPACIDADE;
+--   BEGIN
+--        RETURN p;
+--    END;
+--END;
+--/                                   
+                                   
 
 
 
