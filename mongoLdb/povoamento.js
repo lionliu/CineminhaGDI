@@ -30,3 +30,22 @@ db.movieDetails.insertOne({
 });
 //vou atualizar adicionando diretor e atores nesses 2
 //zé acima
+
+// Leão abaixo
+
+db.movies.insertOne({
+    "Nome_Filme" : "Blade Runner 2049",
+    "Faixa_Etaria" : "17",
+    "Data_Inicio" : "05/10/2017",
+    "Data_Fim" : "22/12/2017",
+    "Genero": "Ficção Cientifica",
+    "Diretor": ["Denis Villeneuve"],
+    "Atores": ["Harrison Ford", "Ryan Gosling", "Ana de Armas", "Dave Bautista", "Jared Leto", "Robin Wright", "Sylvia Hoeks"],
+    "AdoroCinema": {
+        "Critica": 4.5,
+        "Usuarios": 4.2,
+        "AdoroCinema": 4
+    }
+});
+
+
