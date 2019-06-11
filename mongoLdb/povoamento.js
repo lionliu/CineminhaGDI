@@ -42,7 +42,7 @@ db.movies.insertOne({//pra ser removido depois
         "AdoroCinema": 0
     }
 });
-db.movies.deleteOne({"Nome_filme":"Que Filme Merda"});
+db.movies.deleteOne({"Nome_Filme":"Que Filme Merda"});
 
 
 db.movies.insertOne({//Insert Texero
