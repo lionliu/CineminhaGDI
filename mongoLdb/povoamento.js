@@ -125,7 +125,7 @@ db.movies.insertOne(
 	"Faixa_Etaria": 18,
 	"Data_Inicio": "06/06/2019",
 	"Data_Fim": "22/06/2019",
-	"Nome_Filme": "John Wick 3: Parabellum"
+	"Nome_Filme": "John Wick 3: Parabellum",
 	"Genero": "Acao",
 	"Diretor": ["Chad Stahelski"],
 	"Atores": ["Keanu Reeves", "Halle Berry"],
