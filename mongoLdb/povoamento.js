@@ -49,7 +49,7 @@ db.movies.insertOne({//Insert Texero
 		"Faixa_Etaria" : 14,
 		"Data_Inicio" : "21/06/2004",
 		"Data_Fim" : "23/07/2004",
-		"Nome_Filme" : "A história do IPoop."
+		"Nome_Filme" : "A história do IPoop.",
 		"Genero": "Ficção Cientifica",
 		"Diretor":["Ze de bone", "Texera Macaxera"],
 		"Atores": ["Lion", "Adiano", "Ze","Mendonço","Alex Sandro"],
