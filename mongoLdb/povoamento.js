@@ -16,7 +16,7 @@ db.movies.insertOne({//Insert Zé
     
 });
 db.movies.insertOne({
-    "Faixa_Etaria" : 0,
+    "Faixa_Etaria" : 10,
     "Data_Inicio" : "17/12/1999",
     "Data_Fim" : "20/01/2000",
     "Nome_Filme" : "Dragon Ball Zé",
