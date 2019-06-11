@@ -111,7 +111,7 @@ db.movies.insertOne(
 	"Faixa_Etaria": 14,
 	"Data_Inicio": "24/04/2019",
 	"Data_Fim": "27/06/2019",
-	"Nome_Filme": "Vingadores"
+	"Nome_Filme": "Vingadores",
 	"Genero": "Acao",
 	"Diretor": ["Joseph Russo", "Anthony Russo"],
 	"Atores": ["Chris Evans", "Robert Downer Jr.", "Scarlet johansson", "Mark Ruffalo"],
