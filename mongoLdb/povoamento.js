@@ -48,4 +48,16 @@ db.movies.insertOne({
     }
 });
 
-
+db.movies.insertOne({
+    "Nome_Filme" : "Your Name",
+    "Faixa_Etaria" : "13",
+    "Data_Inicio" : "26/08/2016",
+    "Data_Fim" : "27/10/2016",
+    "Genero": "Drama",
+    "Diretor": ["Makoto Shinkai"],
+    "Atores": ["Mone Kamishiraishi", "Ryunosuke Kamiki", "Kana Hanazawa", "Masami Nagasawa"],
+    "AdoroCinema": {
+        "Usuarios": 4.1,
+        "AdoroCinema": 3
+    }
+});
