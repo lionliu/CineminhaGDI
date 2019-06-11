@@ -21,7 +21,7 @@ db.movies.insertOne({
     "Data_Fim" : "20/01/2000",
     "Nome_Filme" : "Dragon Ball Zé",
     "Diretor" : ["Sayazé"],
-    "Atores": ["Zé", "Xuliano"],
+    "Atores": ["Ze", "Xuliano"],
     "AdoroCinema": {
         "Critica": 5,
         "Usuarios": 0.2,
