@@ -1,4 +1,4 @@
-//checklist 1: criacao de ma colecao de documentos
+﻿//checklist 1: criacao de ma colecao de documentos
 db = db.getSiblingDB("Cineminha");
 db.movies.drop();
 db.movies.insertOne({//Insert Zé
@@ -89,3 +89,33 @@ db.movies.insertOne({
         "AdoroCinema": 3
     }
 });
+//adiano abaixo
+db.movies.insertOne(
+	{
+	"Faixa_Etaria": 14,
+	"Data_Inicio": "24/04/2019",
+	"Data_Fim": "27/06/2019",
+	"Nome_Filme": "Vingadores"
+	"Genero": "Acao",
+	"Diretor": ["Joseph Russo", "Anthony Russo"],
+	"Atores": ["Chris Evans", "Robert Downer Jr.", "Scarlet johansson", "Mark Ruffalo"],
+	"AdoroCinema": {
+		"Usuarios": 4.7,
+		"AdoroCinema": 4.0	
+		}
+});
+db.movies.insertOne(
+	{
+	"Faixa_Etaria": 18,
+	"Data_Inicio": "06/06/2019",
+	"Data_Fim": "22/06/2019",
+	"Nome_Filme": "John Wick 3: Parabellum"
+	"Genero": "Acao",
+	"Diretor": ["Chad Stahelski"],
+	"Atores": ["Keanu Reeves", "Halle Berry"],
+	"AdoroCinema": {
+		"Usuarios": 4.4,
+		"AdoroCinema": 3.5	
+		}
+});
+//adiano acima
