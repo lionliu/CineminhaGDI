@@ -29,6 +29,21 @@ db.movies.insertOne({
     }
 });
 
+db.movies.insertOne({//pra ser removido depois
+    "Faixa_Etaria" : "18+",
+    "Data_Inicio" : "17/12/1999",
+    "Data_Fim" : "20/01/2000",
+    "Nome_Filme" : "Que Filme Merda",
+    "Diretor" : ["tem nao"],
+    "Atores": ["Zé ninguem"],
+    "AdoroCinema": {
+        "Critica": 0,
+        "Usuarios": 0,
+        "AdoroCinema": 0
+    }
+});
+db.movies.deleteOne({"Nome_filme":"Que Filme Merda"});
+
 
 db.movies.insertOne({//Insert Texero
 		"Faixa_Etaria" : "14",
