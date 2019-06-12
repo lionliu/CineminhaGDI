@@ -135,3 +135,33 @@ db.movies.insertOne(
 		}
 });
 //adiano acima
+//Juliano abaixo
+db.movies.insertOne(
+	{
+	"Faixa_Etaria": 0,
+	"Data_Inicio": "12/02/2018",
+	"Data_Fim": "12/04/2018",
+	"Nome_Filme": "Michael Jackson, This is it",
+	"Genero": "Documentario",
+	"Diretor": ["Kenny Ortega"],
+	"Atores": ["Michael Jackson", "Cia da danca e da vida"],
+	"AdoroCinema": {
+		"Usuarios": 5.0,
+		"AdoroCinema": 5.0	
+		}
+});
+db.movies.insertOne(
+	{
+	"Faixa_Etaria": 10,
+	"Data_Inicio": "06/02/2019",
+	"Data_Fim": "06/04/2019",
+	"Nome_Filme": "O ser e o nada",
+	"Genero": "Documentario",
+	"Diretor": ["Jean Pual Sarte", "Simone Beauvior"],
+	"Atores": ["Niilismo", "Existencialismo"],
+	"AdoroCinema": {
+		"Usuarios": 4.7,
+		"AdoroCinema": 3.5	
+		}
+});
+//Juliano acima
