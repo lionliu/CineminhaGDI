@@ -34,3 +34,11 @@ db.movies.aggregate(
       }
     }
   ])
+
+db.movies.aggregate([
+   {
+     $group: {
+       Max_Faixa_Etaria: { $max: "$Faixa_Etaria"},  
+     }
+   }
+])
