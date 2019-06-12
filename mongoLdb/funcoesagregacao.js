@@ -36,9 +36,16 @@ db.movies.aggregate(
   ])
 
 db.movies.aggregate([
-   {
-     $group: {
-       Max_Faixa_Etaria: { $max: "$Faixa_Etaria"},  
-     }
-   }
-])
+    {
+      $match:{
+        "Atores":"Ze"
+      }
+    },
+    {
+      $group:{
+        _id:"$Ze",
+        Faixa_Etaria_maxima: {$sum: "$Faixa_Etaria"} 
+      }
+    }
+  ])
+
