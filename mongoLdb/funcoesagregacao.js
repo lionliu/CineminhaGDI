@@ -44,7 +44,7 @@ db.movies.aggregate([
     {
       $group:{
         _id:"$Ze",
-        Faixa_Etaria_maxima: {$sum: "$Faixa_Etaria"} 
+        Faixa_Etaria_maxima: {$max: "$Faixa_Etaria"} 
       }
     }
   ])
